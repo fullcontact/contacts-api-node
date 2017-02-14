@@ -85,4 +85,11 @@ fullcontact.v3.account.get(accessToken)
 ####Tests
 ---
 
-Tests are coming soon
+To run tests:
+
+`npm test`
+
+To get coverage report:
+
+`npm run coverage`
+

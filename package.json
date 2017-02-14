@@ -4,7 +4,8 @@
   "description": "NodeJS SDK for FullContact APIs",
   "main": "lib/fullcontact.js",
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha ."
+    "test": "./node_modules/mocha/bin/mocha --recursive",
+    "coverage": "./node_modules/istanbul/lib/cli.js cover _mocha -- --recursive -R spec"
   },
   "homepage": "https://github.com/fullcontact/fullcontact-node",
   "repository": {
@@ -32,6 +33,10 @@
     "request-promise": "^4.1.1"
   },
   "devDependencies": {
-    "mocha": "^3.2.0"
+    "chance": "^1.0.4",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.2.0",
+    "nock": "^9.0.6",
+    "sinon": "^1.17.7"
   }
 }
