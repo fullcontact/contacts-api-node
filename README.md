@@ -26,7 +26,9 @@
 
 ###Documentation
 
-Documentation can be found at [https://www.fullcontact.com/developer/docs/](https://www.fullcontact.com/developer/docs/)
+API Documentation can be found at [https://www.fullcontact.com/developer/docs/](https://www.fullcontact.com/developer/docs/)
+
+JSDocs can be found in [docs.md](docs.md)
 
 ###Usage
 
