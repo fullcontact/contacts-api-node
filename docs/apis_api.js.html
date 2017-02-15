@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: apis/api.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: apis/api.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>const request = require('request-promise');
+const config = require('./config');
+
+/**
+ * Base Class for all API Resources.
+ * 
+ * @class API
+ */
+class API {
+    /**
+     * Gets the base URL from the config.
+     * 
+     * @readonly
+     * 
+     * @memberOf API
+     */
+    get apiUrl() {
+        return config.url;
+    }
+
+    /**
+     * Handles setting Authorization for the request.
+     * Must be implemented by child classes.
+     * 
+     * @param {String} auth
+     * @param {Object} headers
+     * 
+     * @memberOf API
+     */
+    authorize(auth, headers) { throw 'Not Implemented' }
+
+    /**
+     * Performs the HTTP Request to the specified resource.
+     * 
+     * @param {String} auth
+     * @param {Object} [opts={}]
+     * @returns {Promise}
+     * 
+     * @memberOf API
+     */
+    request(auth, opts = {}) {
+        return this.authorize(auth, opts.headers)
+                   .then(headers =>
+                        request({
+                            method: opts.method || 'GET',
+                            url: `${this.apiUrl}${opts.path}`,
+                            qs: opts.qs,
+                            body: opts.body,
+                            headers,
+                            form: opts.form,
+                            formData: opts.formData,
+                            json: opts.json
+                        })
+                   );
+    }
+}
+
+/**
+ * Base class for API Key authenticated resources.
+ *
+ * @class APIKeyBased
+ * @extends {API}
+ */
+class APIKeyBased extends API {
+    /**
+     * Creates an instance of APIKeyBased.
+     * 
+     * @param {String} apiKey
+     * 
+     * @memberOf APIKeyBased
+     */
+    constructor(apiKey) {
+        super();
+        this.apiKey = apiKey;
+    }
+
+    /**
+     * Sets the X-FullContact-ApiKey header with the specified key.
+     *
+     * @param {String} apiKey
+     * @param {Object} [headers={}]
+     * @returns {Promise}
+     *
+     * @memberOf APIKeyBased
+     */
+    authorize(apiKey, headers = {}) {
+        headers['X-FullContact-ApiKey'] = apiKey;
+        return Promise.resolve(headers);
+    }
+
+    /**
+     * Wraps the base class' request method and always passes in
+     * the apiKey set during construction.
+     *
+     * @param {Object} opts
+     * @returns {Promise}
+     *
+     * @memberOf APIKeyBased
+     */
+    request(opts) {
+        return super.request(this.apiKey, opts);
+    }
+}
+
+/**
+ * Base class for OAuth authenticated resources.
+ * 
+ * @class OAuthBased
+ * @extends {API}
+ */
+class OAuthBased extends API {
+    /**
+     * Creates an instance of OAuthBased.
+     * 
+     * 
+     * @memberOf OAuthBased
+     */
+    constructor() {
+        super();
+    }
+
+    /**
+     * Sets the Authorization header with the specified access_token.
+     * 
+     * @param {string} accessToken
+     * @param {object} [headers={}]
+     * @returns {Promise}
+     * 
+     * @memberOf OAuthBased
+     */
+    authorize(accessToken, headers = {}) {
+        headers.Authorization = `Bearer ${accessToken}`;
+        return Promise.resolve(headers);
+    }
+}
+
+module.exports = {
+    APIKeyBased,
+    OAuthBased
+};</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="AccountAPI.html">AccountAPI</a></li><li><a href="AccountAPI.AccountAPI.html">AccountAPI</a></li><li><a href="API.html">API</a></li><li><a href="APIKeyBased.html">APIKeyBased</a></li><li><a href="APIKeyBased.APIKeyBased.html">APIKeyBased</a></li><li><a href="CompanyAPI.html">CompanyAPI</a></li><li><a href="CompanyAPI.CompanyAPI.html">CompanyAPI</a></li><li><a href="Config.html">Config</a></li><li><a href="ContactsAPI.html">ContactsAPI</a></li><li><a href="ContactsAPI.ContactsAPI.html">ContactsAPI</a></li><li><a href="EmailVerificationAPI.html">EmailVerificationAPI</a></li><li><a href="EmailVerificationAPI.EmailVerificationAPI.html">EmailVerificationAPI</a></li><li><a href="FullContact.html">FullContact</a></li><li><a href="FullContact.FullContact.html">FullContact</a></li><li><a href="LocationAPI.html">LocationAPI</a></li><li><a href="LocationAPI.LocationAPI.html">LocationAPI</a></li><li><a href="NameAPI.html">NameAPI</a></li><li><a href="NameAPI.NameAPI.html">NameAPI</a></li><li><a href="OAuth.html">OAuth</a></li><li><a href="OAuth.OAuth.html">OAuth</a></li><li><a href="OAuthBased.html">OAuthBased</a></li><li><a href="OAuthBased.OAuthBased.html">OAuthBased</a></li><li><a href="PersonAPI.html">PersonAPI</a></li><li><a href="PersonAPI.PersonAPI.html">PersonAPI</a></li><li><a href="StatsAPI.html">StatsAPI</a></li><li><a href="StatsAPI.StatsAPI.html">StatsAPI</a></li><li><a href="TagsAPI.html">TagsAPI</a></li><li><a href="TagsAPI.TagsAPI.html">TagsAPI</a></li><li><a href="V2.html">V2</a></li><li><a href="V2.V2.html">V2</a></li><li><a href="V3.html">V3</a></li><li><a href="V3.V3.html">V3</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Wed Feb 15 2017 16:01:18 GMT-0700 (MST)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

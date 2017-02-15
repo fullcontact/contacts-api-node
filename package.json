@@ -1,11 +1,14 @@
 {
   "name": "fullcontact-node",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "NodeJS SDK for FullContact APIs",
   "main": "lib/fullcontact.js",
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha --recursive",
-    "coverage": "./node_modules/istanbul/lib/cli.js cover _mocha -- --recursive -R spec"
+    "docs": "./node_modules/.bin/jsdoc -r ./lib -d docs",
+    "docs:md": "./node_modules/.bin/jsdoc2md --files lib/fullcontact.js lib/apis/oauth.js lib/apis/v2/** lib/apis/v3/** > docs.md",
+    "coverage": "./node_modules/istanbul/lib/cli.js cover _mocha -- --recursive -R spec",
+    "prepublish": "npm test && npm run docs && npm run docs:md"
   },
   "homepage": "https://github.com/fullcontact/fullcontact-node",
   "repository": {
@@ -35,6 +38,8 @@
   "devDependencies": {
     "chance": "^1.0.4",
     "istanbul": "^0.4.5",
+    "jsdoc": "^3.4.3",
+    "jsdoc-to-markdown": "^3.0.0",
     "mocha": "^3.2.0",
     "nock": "^9.0.6",
     "sinon": "^1.17.7"

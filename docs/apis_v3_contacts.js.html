@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: apis/v3/contacts.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: apis/v3/contacts.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>const API = require('../api');
+
+/**
+ * Contacts APIs
+ * 
+ * @class ContactsAPI
+ * @extends {API.OAuthBased}
+ */
+class ContactsAPI extends API.OAuthBased {
+    /**
+     * Creates an instance of ContactsAPI.
+     * 
+     * 
+     * @memberOf ContactsAPI
+     */
+    constructor() {
+        super();
+    }
+
+    /**
+     * Gets contacts (https://api.fullcontact.com/v3/docs/methods/contacts.get)
+     * REQUIRED SCOPE: contacts.read
+     *
+     * @param {String} accessToken
+     * @param {Object} body
+     * @returns {Promise}
+     * 
+     * @memberOf ContactsAPI
+     */
+    get(accessToken, body) {
+        return this.request(
+            accessToken,
+            {
+                method: 'POST',
+                path: '/v3/contacts.get',
+                body,
+                json: true
+            }
+        );
+    }
+
+    /**
+     * Scrolls a list of contacts (https://api.fullcontact.com/v3/docs/methods/contacts.scroll)
+     * REQUIRED SCOPE: contacts.read
+     *
+     * @param {String} accessToken
+     * @param {Object} body
+     * @returns {Promise}
+     * 
+     * @memberOf ContactsAPI
+     */
+    scroll(accessToken, body) {
+        return this.request(
+            accessToken,
+            {
+                method: 'POST',
+                path: '/v3/contacts.scroll',
+                body,
+                json: true
+            }
+        );
+    }
+
+    /**
+     * Searches for contacts (https://api.fullcontact.com/v3/docs/methods/contacts.search)
+     * REQUIRED SCOPE: contacts.read
+     * 
+     * @param {String} accessToken
+     * @param {Object} body
+     * @returns {Promise}
+     * 
+     * @memberOf ContactsAPI
+     */
+    search(accessToken, body) {
+        return this.request(
+            accessToken,
+            {
+                method: 'POST',
+                path: '/v3/contacts.search',
+                body,
+                json: true
+            }
+        );
+    }
+
+    /**
+     * Creates a new contact (https://api.fullcontact.com/v3/docs/methods/contacts.create)
+     * REQUIRED SCOPE: contacts.write
+     *
+     * @param {String} accessToken
+     * @param {Object} body
+     * @returns {Promise}
+     * 
+     * @memberOf ContactsAPI
+     */
+    create(accessToken, body) {
+        return this.request(
+            accessToken,
+            {
+                method: 'POST',
+                path: '/v3/contacts.create',
+                body,
+                json: true
+            }
+        );
+    }
+
+    /**
+     * Updates a contact (https://api.fullcontact.com/v3/docs/methods/contacts.update)
+     * REQUIRED SCOPE: contacts.write
+     *
+     * @param {String} accessToken
+     * @param {Object} body
+     * @returns {Promise}
+     * 
+     * @memberOf ContactsAPI
+     */
+    update(accessToken, body) {
+        return this.request(
+            accessToken,
+            {
+                method: 'POST',
+                path: '/v3/contacts.update',
+                body,
+                json: true
+            }
+        );
+    }
+
+    /**
+     * Manages tags for a contact (https://api.fullcontact.com/v3/docs/methods/contacts.manageTags)
+     * REQUIRED SCOPE: contacts.write
+     *
+     * @param {String} accessToken
+     * @param {Object} body
+     * @returns {Promise}
+     * 
+     * @memberOf ContactsAPI
+     */
+    manageTags(accessToken, body) {
+        return this.request(
+            accessToken,
+            {
+                method: 'POST',
+                path: '/v3/contacts.manageTags',
+                body,
+                json: true
+            }
+        );
+    }
+
+    /**
+     * Uploads a contact photo (https://api.fullcontact.com/v3/docs/methods/contacts.uploadPhoto)
+     * REQUIRED SCOPE: contacts.write
+     *
+     * @param {String} accessToken
+     * @param {Object} contact
+     * @param {Buffer} buffer
+     * @returns {Promise}
+     * 
+     * @memberOf ContactsAPI
+     */
+    uploadPhoto(accessToken, contact, buffer) {
+        return this.request(
+            accessToken,
+            {
+                method: 'POST',
+                path: '/v3/contacts.uploadPhoto',
+                formData: {
+                    'contact.json': {
+                        value: JSON.stringify(contact),
+                        options: {
+                            contentDisposition: 'form-data',
+                            contentType: 'application/json'
+                        }
+                    },
+                    file3: {
+                        value: buffer,
+                        options: {
+                            filename: 'image.png',
+                            contentType: 'image/png',
+                            contentDisposition: 'form-data'
+                        }
+                    }
+                },
+                json: true
+            }
+        );
+    }
+
+    /**
+     * Deletes a contact (https://api.fullcontact.com/v3/docs/methods/contacts.delete)
+     * REQUIRED SCOPE: contacts.write
+     *
+     * @param {String} accessToken
+     * @param {Object} body
+     * @returns {Promise}
+     * 
+     * @memberOf ContactsAPI
+     */
+    del(accessToken, body) {
+        return this.request(
+            accessToken,
+            {
+                method: 'POST',
+                path: '/v3/contacts.delete',
+                body,
+                json: true
+            }
+        );
+    }
+}
+
+module.exports = ContactsAPI;</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="AccountAPI.html">AccountAPI</a></li><li><a href="AccountAPI.AccountAPI.html">AccountAPI</a></li><li><a href="API.html">API</a></li><li><a href="APIKeyBased.html">APIKeyBased</a></li><li><a href="APIKeyBased.APIKeyBased.html">APIKeyBased</a></li><li><a href="CompanyAPI.html">CompanyAPI</a></li><li><a href="CompanyAPI.CompanyAPI.html">CompanyAPI</a></li><li><a href="Config.html">Config</a></li><li><a href="ContactsAPI.html">ContactsAPI</a></li><li><a href="ContactsAPI.ContactsAPI.html">ContactsAPI</a></li><li><a href="EmailVerificationAPI.html">EmailVerificationAPI</a></li><li><a href="EmailVerificationAPI.EmailVerificationAPI.html">EmailVerificationAPI</a></li><li><a href="FullContact.html">FullContact</a></li><li><a href="FullContact.FullContact.html">FullContact</a></li><li><a href="LocationAPI.html">LocationAPI</a></li><li><a href="LocationAPI.LocationAPI.html">LocationAPI</a></li><li><a href="NameAPI.html">NameAPI</a></li><li><a href="NameAPI.NameAPI.html">NameAPI</a></li><li><a href="OAuth.html">OAuth</a></li><li><a href="OAuth.OAuth.html">OAuth</a></li><li><a href="OAuthBased.html">OAuthBased</a></li><li><a href="OAuthBased.OAuthBased.html">OAuthBased</a></li><li><a href="PersonAPI.html">PersonAPI</a></li><li><a href="PersonAPI.PersonAPI.html">PersonAPI</a></li><li><a href="StatsAPI.html">StatsAPI</a></li><li><a href="StatsAPI.StatsAPI.html">StatsAPI</a></li><li><a href="TagsAPI.html">TagsAPI</a></li><li><a href="TagsAPI.TagsAPI.html">TagsAPI</a></li><li><a href="V2.html">V2</a></li><li><a href="V2.V2.html">V2</a></li><li><a href="V3.html">V3</a></li><li><a href="V3.V3.html">V3</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Wed Feb 15 2017 16:01:18 GMT-0700 (MST)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

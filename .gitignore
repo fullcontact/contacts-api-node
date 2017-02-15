@@ -2,3 +2,4 @@ node_modules/
 .vscode/
 npm-debug*
 /coverage
+.DS_Store

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: apis/oauth.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: apis/oauth.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>const querystring = require('querystring');
+const request = require('request-promise');
+const apiConfig = require('./config');
+const moment = require('moment');
+
+/**
+ * FullContact OAuth (https://api.fullcontact.com/v3/docs/authentication/)
+ * 
+ * @class OAuth
+ */
+class OAuth {
+    /**
+     * Creates an instance of OAuth.
+     * 
+     * @param {Object} config
+     * 
+     * @memberOf OAuth
+     */
+    constructor(config) {
+        this.urls = {
+            authorize: `${apiConfig.appUrl}/oauth/authorize`,
+            accessToken: `${apiConfig.url}/v3/oauth.exchangeAuthCode`,
+            refreshToken: `${apiConfig.url}/v3/oauth.refreshToken`
+        };
+
+        this.clientId = config.clientId;
+        this.clientSecret = config.clientSecret;
+        this.defaultScope = config.scope;
+        this.redirectUri = config.redirectUri || config.redirectUrl;
+    }
+
+    /**
+     * Gets the Authorization URL.
+     *
+     * @param {String} scope
+     * @returns {String}
+     *
+     * @memberOf OAuth
+     */
+    getAuthorizationUrl(scope = this.defaultScope) {
+        const qs = querystring.stringify({
+            client_id: this.clientId,
+            scope,
+            redirect_uri: this.redirectUri
+        });
+
+        return `${this.urls.authorize}?${qs}`;
+    }
+
+    /**
+     * Exchanges an auth code for a access_token &amp; refresh_token.
+     *
+     * @param {String} code
+     * @param {String} [redirectUri=this.redirectUri]
+     * @returns {Promise}
+     * 
+     * @memberOf OAuth
+     */
+    exchangeAuthCode(code, redirectUri = this.redirectUri) {
+        return request({
+            url: this.urls.accessToken,
+            method: 'POST',
+            form: {
+                client_id: this.clientId,
+                client_secret: this.clientSecret,
+                redirect_uri: redirectUri,
+                code
+            },
+            json: true
+        });
+    }
+
+    /**
+     * Gets a new access_token using a refresh_token.
+     *
+     * @param {String} refresh_token
+     * @returns {Promise}
+     * 
+     * @memberOf OAuth
+     */
+    exchangeRefreshToken(refresh_token) {
+        return request({
+            url: this.urls.refreshToken,
+            method: 'POST',
+            form: {
+                client_id: this.clientId,
+                client_secret: this.clientSecret,
+                refresh_token
+            },
+            json: true
+        });
+    }
+
+    /**
+     * 
+     * 
+     * @param {Object} auth
+     * @returns {Boolean}
+     * 
+     * @memberOf OAuth
+     */
+    isExpired(auth) {
+        return !auth || moment(auth.access_token_expiration_date).isBefore(Date.now());
+    }
+}
+
+module.exports = OAuth;</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="AccountAPI.html">AccountAPI</a></li><li><a href="AccountAPI.AccountAPI.html">AccountAPI</a></li><li><a href="API.html">API</a></li><li><a href="APIKeyBased.html">APIKeyBased</a></li><li><a href="APIKeyBased.APIKeyBased.html">APIKeyBased</a></li><li><a href="CompanyAPI.html">CompanyAPI</a></li><li><a href="CompanyAPI.CompanyAPI.html">CompanyAPI</a></li><li><a href="Config.html">Config</a></li><li><a href="ContactsAPI.html">ContactsAPI</a></li><li><a href="ContactsAPI.ContactsAPI.html">ContactsAPI</a></li><li><a href="EmailVerificationAPI.html">EmailVerificationAPI</a></li><li><a href="EmailVerificationAPI.EmailVerificationAPI.html">EmailVerificationAPI</a></li><li><a href="FullContact.html">FullContact</a></li><li><a href="FullContact.FullContact.html">FullContact</a></li><li><a href="LocationAPI.html">LocationAPI</a></li><li><a href="LocationAPI.LocationAPI.html">LocationAPI</a></li><li><a href="NameAPI.html">NameAPI</a></li><li><a href="NameAPI.NameAPI.html">NameAPI</a></li><li><a href="OAuth.html">OAuth</a></li><li><a href="OAuth.OAuth.html">OAuth</a></li><li><a href="OAuthBased.html">OAuthBased</a></li><li><a href="OAuthBased.OAuthBased.html">OAuthBased</a></li><li><a href="PersonAPI.html">PersonAPI</a></li><li><a href="PersonAPI.PersonAPI.html">PersonAPI</a></li><li><a href="StatsAPI.html">StatsAPI</a></li><li><a href="StatsAPI.StatsAPI.html">StatsAPI</a></li><li><a href="TagsAPI.html">TagsAPI</a></li><li><a href="TagsAPI.TagsAPI.html">TagsAPI</a></li><li><a href="V2.html">V2</a></li><li><a href="V2.V2.html">V2</a></li><li><a href="V3.html">V3</a></li><li><a href="V3.V3.html">V3</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Wed Feb 15 2017 16:01:18 GMT-0700 (MST)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
