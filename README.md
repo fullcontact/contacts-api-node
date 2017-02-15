@@ -1,5 +1,9 @@
 #FullContact node.js SDK
 
+[![Build Status](https://travis-ci.org/fullcontact/fullcontact-node.svg?branch=master)](https://travis-ci.org/fullcontact/fullcontact-node)
+[![npm version](https://badge.fury.io/js/fullcontact-node.svg)](https://badge.fury.io/js/fullcontact-node)
+[![Node version](https://img.shields.io/node/v/fullcontact-node.svg?style=flat)](http://nodejs.org/download/)
+
 *IMPORTANT: This SDK should be used server-side only. Using them in a browser would expose Client Secret or API Key.*
 
 ###Supported APIs
