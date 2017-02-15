@@ -1,6 +1,6 @@
 {
   "name": "fullcontact-node",
-  "version": "0.1.6",
+  "version": "1.0.0",
   "description": "NodeJS SDK for FullContact APIs",
   "main": "lib/fullcontact.js",
   "scripts": {
