@@ -4,7 +4,7 @@
 [![npm version](https://badge.fury.io/js/fullcontact-node.svg)](https://badge.fury.io/js/fullcontact-node)
 [![Node version](https://img.shields.io/node/v/fullcontact-node.svg?style=flat)](http://nodejs.org/download/)
 
-*IMPORTANT: This SDK should be used server-side only. Using them in a browser would expose Client Secret or API Key.*
+*IMPORTANT: This SDK should be used server-side only. Using it in a browser would expose Client Secret or API Key.*
 
 ###Supported APIs
 
@@ -35,8 +35,8 @@ Documentation can be found at [https://www.fullcontact.com/developer/docs/](http
 
 ```
 var fullcontact = require('fullcontact-node')({
-	apiKey: '<API Key>',
-	clientId: '<Client ID>',
+	apiKey: '<API Key>', //for v2 APIs. See: https://www.fullcontact.com/developer/
+	clientId: '<Client ID>', //for v3 APIs. See: https://app.fullcontact.com/apps
 	clientSecret: '<Client Secret>',
 	redirectUri: '<Redirect URI>',
 	scope: 'list,of,scopes'
