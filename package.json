@@ -19,7 +19,7 @@
     "SDK"
   ],
   "engines": {
-    "node": ">= v6.9.0"
+    "node": ">= v6.1.0"
   },
   "author": "FullContact Labs <support+labs@fullcontact.com>",
   "contributors": [
