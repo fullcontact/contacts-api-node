@@ -1,4 +1,4 @@
-#FullContact node.js SDK
+# FullContact node.js SDK
 
 [![Build Status](https://travis-ci.org/fullcontact/fullcontact-node.svg?branch=master)](https://travis-ci.org/fullcontact/fullcontact-node)
 [![npm version](https://badge.fury.io/js/fullcontact-node.svg)](https://badge.fury.io/js/fullcontact-node)
@@ -6,7 +6,7 @@
 
 *IMPORTANT: This SDK should be used server-side only. Using it in a browser would expose Client Secret or API Key.*
 
-###Supported APIs
+### Supported APIs
 
 - Person API
 - Company API
@@ -20,19 +20,19 @@
 
 *Card Reader API is not currently supported*
 
-###Installation
+### Installation
 
 `npm install fullcontact-node --save`
 
-###Documentation
+### Documentation
 
 API Documentation can be found at [https://www.fullcontact.com/developer/docs/](https://www.fullcontact.com/developer/docs/)
 
 JSDocs can be found in [docs.md](docs.md)
 
-###Usage
+### Usage
 
-#####Configuration
+##### Configuration
 ---
 
 ```
@@ -45,11 +45,11 @@ var fullcontact = require('fullcontact-node')({
 });
 ```
 
-#####OAuth
+##### OAuth
 ---
 All OAuth methods can be found under the `oauth` property on the client.
 
-######Supported Methods:
+###### Supported Methods:
 - getAuthorizationUrl()
 - exchangeAuthCode(code)
 - exchangeRefreshToken(refresh_token)
@@ -58,7 +58,7 @@ All OAuth methods can be found under the `oauth` property on the client.
 var url = fullcontact.oauth.getAuthorizationUrl();
 ```
 
-#####v2 APIs
+##### v2 APIs
 ---
 All v2 APIs can be found under the `v2` property on the client.
 
@@ -74,7 +74,7 @@ fullcontact.v2.person.lookup({
 	});
 ```
 
-#####v3 APIs
+##### v3 APIs
 ---
 All v3 APIs can be found under the `v2` property on the client.
 
@@ -88,7 +88,7 @@ fullcontact.v3.account.get(accessToken)
 	});
 ```
 
-####Tests
+#### Tests
 ---
 
 To run tests:
