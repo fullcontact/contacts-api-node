@@ -17,6 +17,7 @@
 - Tags API
 - Contacts API
 - Account API
+- Webhooks API
 
 *Card Reader API is not currently supported*
 
