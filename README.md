@@ -18,6 +18,7 @@
 - Contacts API
 - Account API
 - Webhooks API
+- Teams API
 
 *Card Reader API is not currently supported*
 
