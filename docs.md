@@ -97,7 +97,7 @@ Config: {
 * [OAuth](#OAuth)
     * [new OAuth()](#new_OAuth_new)
     * _instance_
-        * [.getAuthorizationUrl(scope)](#OAuth+getAuthorizationUrl) ⇒ <code>String</code>
+        * [.getAuthorizationUrl(scope, queryString)](#OAuth+getAuthorizationUrl) ⇒ <code>String</code>
         * [.exchangeAuthCode(code, [redirectUri])](#OAuth+exchangeAuthCode) ⇒ <code>Promise</code>
         * [.exchangeRefreshToken(refresh_token)](#OAuth+exchangeRefreshToken) ⇒ <code>Promise</code>
         * [.isExpired(auth)](#OAuth+isExpired) ⇒ <code>Boolean</code>
@@ -112,7 +112,7 @@ FullContact OAuth (https://api.fullcontact.com/v3/docs/authentication/)
 
 <a name="OAuth+getAuthorizationUrl"></a>
 
-### oAuth.getAuthorizationUrl(scope) ⇒ <code>String</code>
+### oAuth.getAuthorizationUrl(scope, queryString) ⇒ <code>String</code>
 Gets the Authorization URL.
 
 **Kind**: instance method of [<code>OAuth</code>](#OAuth)  
@@ -120,6 +120,7 @@ Gets the Authorization URL.
 | Param | Type |
 | --- | --- |
 | scope | <code>String</code> | 
+| queryString | <code>Object</code> | 
 
 <a name="OAuth+exchangeAuthCode"></a>
 
