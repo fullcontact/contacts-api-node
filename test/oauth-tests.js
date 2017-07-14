@@ -44,6 +44,27 @@ describe('OAuth', () => {
         );
     });
 
+    it('should get authorization url with queryString options', () => {
+        const clientId = chance.string();
+        const clientSecret = chance.string();
+        const scope = chance.string();
+        const redirectUri = chance.url();
+        const state = chance.string();
+
+        const instance = new OAuth({
+            clientId,
+            clientSecret,
+            scope,
+            redirectUri
+        });
+
+        const result = instance.getAuthorizationUrl(scope, { state });
+        assert.equal(
+            result,
+            `${config.appUrl}/oauth/authorize?client_id=${encodeURIComponent(clientId)}&scope=${encodeURIComponent(scope)}&redirect_uri=${encodeURIComponent(redirectUri)}&state=${encodeURIComponent(state)}`
+        );
+    });
+
     it('should get authorization url with non-default scope', () => {
         const clientId = chance.string();
         const clientSecret = chance.string();
