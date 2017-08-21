@@ -6,10 +6,11 @@ const LocationAPI  = require('../../lib/apis/v2/location');
 const NameAPI  = require('../../lib/apis/v2/name');
 const PersonAPI  = require('../../lib/apis/v2/person');
 const StatsAPI  = require('../../lib/apis/v2/stats');
+const chance = require('chance')();
 
 describe('V2', () => {
     it('should create instances', () => {
-        const instance = new V2();
+        const instance = new V2({ apiKey: chance.string() });
         assert.ok(instance.person instanceof PersonAPI);
         assert.ok(instance.company instanceof CompanyAPI);
         assert.ok(instance.name instanceof NameAPI);
@@ -20,8 +21,8 @@ describe('V2', () => {
 
     it('cardReader should not be implemented', () => {
         try {
-            const instance = new V2();
-            const cr =instance.cardReader;
+            const instance = new V2({});
+            const cr = instance.cardReader;
         } catch(e) {
             assert.equal(e, 'Not Implemented');
         }

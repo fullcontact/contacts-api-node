@@ -43,7 +43,9 @@ var fullcontact = require('fullcontact-node')({
 	clientId: '<Client ID>', //for v3 APIs. See: https://app.fullcontact.com/apps
 	clientSecret: '<Client Secret>',
 	redirectUri: '<Redirect URI>',
-	scope: 'list,of,scopes'
+	scope: 'list,of,scopes',
+	userAgent: '<AppName/Version>',
+	baseUrl: '<URL>' //to override base api url
 });
 ```
 

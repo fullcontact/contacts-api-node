@@ -9,13 +9,13 @@ nock.disableNetConnect();
 describe('V2-Location', () => {
     it('should set apiKey', () => {
         const apiKey = chance.string();
-        const instance = new LocationAPI(apiKey);
+        const instance = new LocationAPI({ apiKey });
         assert.equal(instance.apiKey, apiKey);
     });
 
     it('should send apiKey as header', done => {
         const apiKey = chance.string();
-        const instance = new LocationAPI(apiKey);
+        const instance = new LocationAPI({ apiKey });
         const opts = {
             place: chance.string(),
             includeZeroPopulation: false
@@ -36,7 +36,7 @@ describe('V2-Location', () => {
 
     it('should normalize', done => {
         const apiKey = chance.string();
-        const instance = new LocationAPI(apiKey);
+        const instance = new LocationAPI({ apiKey });
         const opts = {
             place: chance.string(),
             includeZeroPopulation: false
@@ -57,7 +57,7 @@ describe('V2-Location', () => {
 
     it('should enrich', done => {
         const apiKey = chance.string();
-        const instance = new LocationAPI(apiKey);
+        const instance = new LocationAPI({ apiKey });
         const opts = {
             place: chance.string(),
             includeZeroPopulation: false

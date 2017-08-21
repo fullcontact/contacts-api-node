@@ -9,13 +9,13 @@ nock.disableNetConnect();
 describe('V2-Person', () => {
     it('should set apiKey', () => {
         const apiKey = chance.string();
-        const instance = new PersonAPI(apiKey);
+        const instance = new PersonAPI({ apiKey });
         assert.equal(instance.apiKey, apiKey);
     });
 
     it('should send apiKey as header', done => {
         const apiKey = chance.string();
-        const instance = new PersonAPI(apiKey);
+        const instance = new PersonAPI({ apiKey });
         const opts = {
             email: chance.email()
         };
@@ -35,7 +35,7 @@ describe('V2-Person', () => {
 
     it('should lookup', done => {
         const apiKey = chance.string();
-        const instance = new PersonAPI(apiKey);
+        const instance = new PersonAPI({ apiKey });
         const opts = {
             email: chance.email()
         };

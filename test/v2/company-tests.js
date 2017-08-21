@@ -9,13 +9,13 @@ nock.disableNetConnect();
 describe('V2-Company', () => {    
     it('should set apiKey', () => {
         const apiKey = chance.string();
-        const instance = new CompanyAPI(apiKey);
+        const instance = new CompanyAPI({ apiKey });
         assert.equal(instance.apiKey, apiKey);
     });
 
     it('should send apiKey as header', done => {
         const apiKey = chance.string();
-        const instance = new CompanyAPI(apiKey);
+        const instance = new CompanyAPI({ apiKey });
         const opts = {
             domain: chance.domain(),
             keyPeople: true,
@@ -40,7 +40,7 @@ describe('V2-Company', () => {
 
     it('should lookup by domain', done => {
         const apiKey = chance.string();
-        const instance = new CompanyAPI(apiKey);
+        const instance = new CompanyAPI({ apiKey });
         const opts = {
             domain: chance.domain(),
             keyPeople: true,
@@ -65,7 +65,7 @@ describe('V2-Company', () => {
 
     it('should search by name', done => {
         const apiKey = chance.string();
-        const instance = new CompanyAPI(apiKey);
+        const instance = new CompanyAPI({ apiKey });
         const opts = {
             companyName: chance.name(),
             keyPeople: true,

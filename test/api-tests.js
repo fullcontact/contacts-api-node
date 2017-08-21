@@ -5,8 +5,8 @@ const chance = require('chance')();
 
 describe('APIKeyBased', () => {
     it('should add auth header', done => {
-        const instance = new api.APIKeyBased();
         const apiKey = chance.string();
+        const instance = new api.APIKeyBased({ apiKey });
         const headers = {};
 
         instance.authorize(apiKey, headers)
@@ -30,5 +30,23 @@ describe('OAuthBased', () => {
                 done();
             })
             .catch(e => assert.fail(e));
+    });
+});
+
+describe('API', () => {
+    it('should replace url', () => {
+        const baseUrl = chance.url();
+        const instance = new api.OAuthBased({ baseUrl });
+
+        assert.equal(instance.apiUrl, baseUrl);
+    });
+});
+
+describe('API', () => {
+    it('should replace user-agent', () => {
+        const userAgent = chance.string();
+        const instance = new api.OAuthBased({ userAgent });
+
+        assert.equal(instance.userAgent, userAgent);
     });
 });

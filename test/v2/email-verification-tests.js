@@ -9,13 +9,13 @@ nock.disableNetConnect();
 describe('V2-EmailVerification', () => {
     it('should set apiKey', () => {
         const apiKey = chance.string();
-        const instance = new EmailVerificationAPI(apiKey);
+        const instance = new EmailVerificationAPI({ apiKey });
         assert.equal(instance.apiKey, apiKey);
     });
 
     it('should send apiKey as header', done => {
         const apiKey = chance.string();
-        const instance = new EmailVerificationAPI(apiKey);
+        const instance = new EmailVerificationAPI({ apiKey });
         const opts = {
             email: chance.email()
         };
@@ -35,7 +35,7 @@ describe('V2-EmailVerification', () => {
 
     it('should lookup single', done => {
         const apiKey = chance.string();
-        const instance = new EmailVerificationAPI(apiKey);
+        const instance = new EmailVerificationAPI({ apiKey });
         const opts = {
             email: chance.email()
         };
@@ -55,7 +55,7 @@ describe('V2-EmailVerification', () => {
 
     it('should batch emails', done => {
         const apiKey = chance.string();
-        const instance = new EmailVerificationAPI(apiKey);
+        const instance = new EmailVerificationAPI({ apiKey });
 
         const opts = {
             emails: [chance.email(), chance.email()],
@@ -78,7 +78,7 @@ describe('V2-EmailVerification', () => {
         const apiKey = chance.string();
         const id = chance.word();
         const path = `/v2/verification/emails/${id}`;
-        const instance = new EmailVerificationAPI(apiKey);
+        const instance = new EmailVerificationAPI({ apiKey });
 
         const scope = nock(config.url)
                             .get(path)

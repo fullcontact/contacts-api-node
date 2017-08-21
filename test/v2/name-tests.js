@@ -9,13 +9,13 @@ nock.disableNetConnect();
 describe('V2-Name', () => {
     it('should set apiKey', () => {
         const apiKey = chance.string();
-        const instance = new NameAPI(apiKey);
+        const instance = new NameAPI({ apiKey });
         assert.equal(instance.apiKey, apiKey);
     });
 
     it('should send apiKey as header', done => {
         const apiKey = chance.string();
-        const instance = new NameAPI(apiKey);
+        const instance = new NameAPI({ apiKey });
         const opts = {
             q: chance.string()
         };
@@ -35,7 +35,7 @@ describe('V2-Name', () => {
 
     it('should normalize', done => {
         const apiKey = chance.string();
-        const instance = new NameAPI(apiKey);
+        const instance = new NameAPI({ apiKey });
         const opts = {
             q: chance.string()
         };
@@ -55,7 +55,7 @@ describe('V2-Name', () => {
 
     it('should check similarity', done => {
         const apiKey = chance.string();
-        const instance = new NameAPI(apiKey);
+        const instance = new NameAPI({ apiKey });
         const opts = {
             q1: chance.string(),
             q2: chance.string()
@@ -76,7 +76,7 @@ describe('V2-Name', () => {
 
     it('should get stats', done => {
         const apiKey = chance.string();
-        const instance = new NameAPI(apiKey);
+        const instance = new NameAPI({ apiKey });
         const opts = {
             q: chance.string()
         };
@@ -96,7 +96,7 @@ describe('V2-Name', () => {
 
     it('should parse', done => {
         const apiKey = chance.string();
-        const instance = new NameAPI(apiKey);
+        const instance = new NameAPI({ apiKey });
         const opts = {
             q: chance.string()
         };
