@@ -52,26 +52,26 @@
 ### fullContact.v2
 Gets v2 APIs
 
-**Kind**: instance property of <code>[FullContact](#FullContact)</code>  
+**Kind**: instance property of [<code>FullContact</code>](#FullContact)  
 **Read only**: true  
 <a name="FullContact+v3"></a>
 
 ### fullContact.v3
 Gets v3 APIs
 
-**Kind**: instance property of <code>[FullContact](#FullContact)</code>  
+**Kind**: instance property of [<code>FullContact</code>](#FullContact)  
 **Read only**: true  
 <a name="FullContact+oauth"></a>
 
 ### fullContact.oauth
 Gets oauth client
 
-**Kind**: instance property of <code>[FullContact](#FullContact)</code>  
+**Kind**: instance property of [<code>FullContact</code>](#FullContact)  
 **Read only**: true  
 <a name="FullContact.FullContact"></a>
 
 ### FullContact.FullContact
-**Kind**: static class of <code>[FullContact](#FullContact)</code>  
+**Kind**: static class of [<code>FullContact</code>](#FullContact)  
 <a name="new_FullContact.FullContact_new"></a>
 
 #### new FullContact(config)
@@ -81,7 +81,8 @@ Config: {
  clientId,
  clientSecret,
  redirectUri,
- scope
+ scope,
+ baseUrl
 }
 
 
@@ -115,7 +116,7 @@ FullContact OAuth (https://api.fullcontact.com/v3/docs/authentication/)
 ### oAuth.getAuthorizationUrl(scope, queryString) ⇒ <code>String</code>
 Gets the Authorization URL.
 
-**Kind**: instance method of <code>[OAuth](#OAuth)</code>  
+**Kind**: instance method of [<code>OAuth</code>](#OAuth)  
 
 | Param | Type |
 | --- | --- |
@@ -127,7 +128,7 @@ Gets the Authorization URL.
 ### oAuth.exchangeAuthCode(code, [redirectUri]) ⇒ <code>Promise</code>
 Exchanges an auth code for a access_token & refresh_token.
 
-**Kind**: instance method of <code>[OAuth](#OAuth)</code>  
+**Kind**: instance method of [<code>OAuth</code>](#OAuth)  
 
 | Param | Type | Default |
 | --- | --- | --- |
@@ -139,7 +140,7 @@ Exchanges an auth code for a access_token & refresh_token.
 ### oAuth.exchangeRefreshToken(refresh_token) ⇒ <code>Promise</code>
 Gets a new access_token using a refresh_token.
 
-**Kind**: instance method of <code>[OAuth](#OAuth)</code>  
+**Kind**: instance method of [<code>OAuth</code>](#OAuth)  
 
 | Param | Type |
 | --- | --- |
@@ -148,7 +149,7 @@ Gets a new access_token using a refresh_token.
 <a name="OAuth+isExpired"></a>
 
 ### oAuth.isExpired(auth) ⇒ <code>Boolean</code>
-**Kind**: instance method of <code>[OAuth](#OAuth)</code>  
+**Kind**: instance method of [<code>OAuth</code>](#OAuth)  
 
 | Param | Type |
 | --- | --- |
@@ -157,7 +158,7 @@ Gets a new access_token using a refresh_token.
 <a name="OAuth.OAuth"></a>
 
 ### OAuth.OAuth
-**Kind**: static class of <code>[OAuth](#OAuth)</code>  
+**Kind**: static class of [<code>OAuth</code>](#OAuth)  
 <a name="new_OAuth.OAuth_new"></a>
 
 #### new OAuth(config)
@@ -172,7 +173,7 @@ Creates an instance of OAuth.
 
 ## CompanyAPI ⇐ <code>API.APIKeyBased</code>
 **Kind**: global class  
-**Extends:** <code>API.APIKeyBased</code>  
+**Extends**: <code>API.APIKeyBased</code>  
 
 * [CompanyAPI](#CompanyAPI) ⇐ <code>API.APIKeyBased</code>
     * [new CompanyAPI()](#new_CompanyAPI_new)
@@ -196,7 +197,7 @@ Creates an instance of OAuth.
 }])](#CompanyAPI+search) ⇒ <code>Promise</code>
     * _static_
         * [.CompanyAPI](#CompanyAPI.CompanyAPI)
-            * [new CompanyAPI(apiKey)](#new_CompanyAPI.CompanyAPI_new)
+            * [new CompanyAPI(config)](#new_CompanyAPI.CompanyAPI_new)
 
 <a name="new_CompanyAPI_new"></a>
 
@@ -215,7 +216,7 @@ Company APIs (https://www.fullcontact.com/developer/docs/company)
 }]) ⇒ <code>Promise</code>
 lookup a company by domain.
 
-**Kind**: instance method of <code>[CompanyAPI](#CompanyAPI)</code>  
+**Kind**: instance method of [<code>CompanyAPI</code>](#CompanyAPI)  
 
 | Param | Type |
 | --- | --- |
@@ -241,7 +242,7 @@ lookup a company by domain.
 }]) ⇒ <code>Promise</code>
 Search for companies by name
 
-**Kind**: instance method of <code>[CompanyAPI](#CompanyAPI)</code>  
+**Kind**: instance method of [<code>CompanyAPI</code>](#CompanyAPI)  
 
 | Param | Type |
 | --- | --- |
@@ -258,22 +259,22 @@ Search for companies by name
 <a name="CompanyAPI.CompanyAPI"></a>
 
 ### CompanyAPI.CompanyAPI
-**Kind**: static class of <code>[CompanyAPI](#CompanyAPI)</code>  
+**Kind**: static class of [<code>CompanyAPI</code>](#CompanyAPI)  
 <a name="new_CompanyAPI.CompanyAPI_new"></a>
 
-#### new CompanyAPI(apiKey)
+#### new CompanyAPI(config)
 Creates an instance of CompanyAPI.
 
 
 | Param | Type |
 | --- | --- |
-| apiKey | <code>String</code> | 
+| config | <code>Object</code> | 
 
 <a name="EmailVerificationAPI"></a>
 
 ## EmailVerificationAPI ⇐ <code>API.APIKeyBased</code>
 **Kind**: global class  
-**Extends:** <code>API.APIKeyBased</code>  
+**Extends**: <code>API.APIKeyBased</code>  
 
 * [EmailVerificationAPI](#EmailVerificationAPI) ⇐ <code>API.APIKeyBased</code>
     * [new EmailVerificationAPI()](#new_EmailVerificationAPI_new)
@@ -288,7 +289,7 @@ Creates an instance of CompanyAPI.
         * [.batchStatus(id)](#EmailVerificationAPI+batchStatus) ⇒ <code>Promise</code>
     * _static_
         * [.EmailVerificationAPI](#EmailVerificationAPI.EmailVerificationAPI)
-            * [new EmailVerificationAPI(apiKey)](#new_EmailVerificationAPI.EmailVerificationAPI_new)
+            * [new EmailVerificationAPI(config)](#new_EmailVerificationAPI.EmailVerificationAPI_new)
 
 <a name="new_EmailVerificationAPI_new"></a>
 
@@ -302,7 +303,7 @@ Email Verification APIs (https://www.fullcontact.com/developer/docs/email-verifi
 }]) ⇒ <code>Promise</code>
 Verifies a single email
 
-**Kind**: instance method of <code>[EmailVerificationAPI](#EmailVerificationAPI)</code>  
+**Kind**: instance method of [<code>EmailVerificationAPI</code>](#EmailVerificationAPI)  
 
 | Param | Type |
 | --- | --- |
@@ -318,7 +319,7 @@ Verifies a single email
 }]) ⇒ <code>Promise</code>
 Verifies multiple emails
 
-**Kind**: instance method of <code>[EmailVerificationAPI](#EmailVerificationAPI)</code>  
+**Kind**: instance method of [<code>EmailVerificationAPI</code>](#EmailVerificationAPI)  
 
 | Param | Type |
 | --- | --- |
@@ -332,7 +333,7 @@ Verifies multiple emails
 ### emailVerificationAPI.batchStatus(id) ⇒ <code>Promise</code>
 Gets the status on a batch of emails.
 
-**Kind**: instance method of <code>[EmailVerificationAPI](#EmailVerificationAPI)</code>  
+**Kind**: instance method of [<code>EmailVerificationAPI</code>](#EmailVerificationAPI)  
 
 | Param | Type |
 | --- | --- |
@@ -341,16 +342,16 @@ Gets the status on a batch of emails.
 <a name="EmailVerificationAPI.EmailVerificationAPI"></a>
 
 ### EmailVerificationAPI.EmailVerificationAPI
-**Kind**: static class of <code>[EmailVerificationAPI](#EmailVerificationAPI)</code>  
+**Kind**: static class of [<code>EmailVerificationAPI</code>](#EmailVerificationAPI)  
 <a name="new_EmailVerificationAPI.EmailVerificationAPI_new"></a>
 
-#### new EmailVerificationAPI(apiKey)
+#### new EmailVerificationAPI(config)
 Creates an instance of EmailVerificationAPI.
 
 
 | Param | Type |
 | --- | --- |
-| apiKey | <code>String</code> | 
+| config | <code>Object</code> | 
 
 <a name="V2"></a>
 
@@ -369,7 +370,7 @@ Creates an instance of EmailVerificationAPI.
         * [.cardReader](#V2+cardReader)
     * _static_
         * [.V2](#V2.V2)
-            * [new V2(apiKey)](#new_V2.V2_new)
+            * [new V2(config)](#new_V2.V2_new)
 
 <a name="new_V2_new"></a>
 
@@ -381,42 +382,42 @@ V2 APIs
 ### v2.person
 Gets Person APIs
 
-**Kind**: instance property of <code>[V2](#V2)</code>  
+**Kind**: instance property of [<code>V2</code>](#V2)  
 **Read only**: true  
 <a name="V2+company"></a>
 
 ### v2.company
 Gets Company APIs
 
-**Kind**: instance property of <code>[V2](#V2)</code>  
+**Kind**: instance property of [<code>V2</code>](#V2)  
 **Read only**: true  
 <a name="V2+name"></a>
 
 ### v2.name
 Gets Name APIs
 
-**Kind**: instance property of <code>[V2](#V2)</code>  
+**Kind**: instance property of [<code>V2</code>](#V2)  
 **Read only**: true  
 <a name="V2+location"></a>
 
 ### v2.location
 Gets Location APIs
 
-**Kind**: instance property of <code>[V2](#V2)</code>  
+**Kind**: instance property of [<code>V2</code>](#V2)  
 **Read only**: true  
 <a name="V2+stats"></a>
 
 ### v2.stats
 Gets Stats APIs
 
-**Kind**: instance property of <code>[V2](#V2)</code>  
+**Kind**: instance property of [<code>V2</code>](#V2)  
 **Read only**: true  
 <a name="V2+emailVerification"></a>
 
 ### v2.emailVerification
 Gets Email Verification APIs
 
-**Kind**: instance property of <code>[V2](#V2)</code>  
+**Kind**: instance property of [<code>V2</code>](#V2)  
 **Read only**: true  
 <a name="V2+cardReader"></a>
 
@@ -424,27 +425,27 @@ Gets Email Verification APIs
 Gets Card Reader APIs
 Not Implemented
 
-**Kind**: instance property of <code>[V2](#V2)</code>  
+**Kind**: instance property of [<code>V2</code>](#V2)  
 **Read only**: true  
 <a name="V2.V2"></a>
 
 ### V2.V2
-**Kind**: static class of <code>[V2](#V2)</code>  
+**Kind**: static class of [<code>V2</code>](#V2)  
 <a name="new_V2.V2_new"></a>
 
-#### new V2(apiKey)
+#### new V2(config)
 Creates an instance of V2.
 
 
 | Param | Type |
 | --- | --- |
-| apiKey | <code>String</code> | 
+| config | <code>Object</code> | 
 
 <a name="LocationAPI"></a>
 
 ## LocationAPI ⇐ <code>API.APIKeyBased</code>
 **Kind**: global class  
-**Extends:** <code>API.APIKeyBased</code>  
+**Extends**: <code>API.APIKeyBased</code>  
 
 * [LocationAPI](#LocationAPI) ⇐ <code>API.APIKeyBased</code>
     * [new LocationAPI()](#new_LocationAPI_new)
@@ -461,7 +462,7 @@ Creates an instance of V2.
 }])](#LocationAPI+enrich) ⇒ <code>Promise</code>
     * _static_
         * [.LocationAPI](#LocationAPI.LocationAPI)
-            * [new LocationAPI(apiKey)](#new_LocationAPI.LocationAPI_new)
+            * [new LocationAPI(config)](#new_LocationAPI.LocationAPI_new)
 
 <a name="new_LocationAPI_new"></a>
 
@@ -477,7 +478,7 @@ Location APIs (https://www.fullcontact.com/developer/docs/location/)
 }]) ⇒ <code>Promise</code>
 Normalizes a location.
 
-**Kind**: instance method of <code>[LocationAPI](#LocationAPI)</code>  
+**Kind**: instance method of [<code>LocationAPI</code>](#LocationAPI)  
 
 | Param | Type |
 | --- | --- |
@@ -496,7 +497,7 @@ Normalizes a location.
 }]) ⇒ <code>Promise</code>
 Enriches a location.
 
-**Kind**: instance method of <code>[LocationAPI](#LocationAPI)</code>  
+**Kind**: instance method of [<code>LocationAPI</code>](#LocationAPI)  
 
 | Param | Type |
 | --- | --- |
@@ -509,22 +510,22 @@ Enriches a location.
 <a name="LocationAPI.LocationAPI"></a>
 
 ### LocationAPI.LocationAPI
-**Kind**: static class of <code>[LocationAPI](#LocationAPI)</code>  
+**Kind**: static class of [<code>LocationAPI</code>](#LocationAPI)  
 <a name="new_LocationAPI.LocationAPI_new"></a>
 
-#### new LocationAPI(apiKey)
+#### new LocationAPI(config)
 Creates an instance of LocationAPI.
 
 
 | Param | Type |
 | --- | --- |
-| apiKey | <code>String</code> | 
+| config | <code>Object</code> | 
 
 <a name="NameAPI"></a>
 
 ## NameAPI ⇐ <code>API.APIKeyBased</code>
 **Kind**: global class  
-**Extends:** <code>API.APIKeyBased</code>  
+**Extends**: <code>API.APIKeyBased</code>  
 
 * [NameAPI](#NameAPI) ⇐ <code>API.APIKeyBased</code>
     * [new NameAPI()](#new_NameAPI_new)
@@ -555,7 +556,7 @@ Creates an instance of LocationAPI.
 }])](#NameAPI+parser) ⇒ <code>Promise</code>
     * _static_
         * [.NameAPI](#NameAPI.NameAPI)
-            * [new NameAPI(apiKey)](#new_NameAPI.NameAPI_new)
+            * [new NameAPI(config)](#new_NameAPI.NameAPI_new)
 
 <a name="new_NameAPI_new"></a>
 
@@ -570,7 +571,7 @@ Name APIs (https://www.fullcontact.com/developer/docs/name/)
 }]) ⇒ <code>Promise</code>
 Normalizes a name.
 
-**Kind**: instance method of <code>[NameAPI](#NameAPI)</code>  
+**Kind**: instance method of [<code>NameAPI</code>](#NameAPI)  
 
 | Param | Type |
 | --- | --- |
@@ -588,7 +589,7 @@ Normalizes a name.
 }]) ⇒ <code>Promise</code>
 Deduces a name
 
-**Kind**: instance method of <code>[NameAPI](#NameAPI)</code>  
+**Kind**: instance method of [<code>NameAPI</code>](#NameAPI)  
 
 | Param | Type |
 | --- | --- |
@@ -607,7 +608,7 @@ Deduces a name
 }]) ⇒ <code>Promise</code>
 Compares two names to see how similar they are.
 
-**Kind**: instance method of <code>[NameAPI](#NameAPI)</code>  
+**Kind**: instance method of [<code>NameAPI</code>](#NameAPI)  
 
 | Param | Type |
 | --- | --- |
@@ -627,7 +628,7 @@ Compares two names to see how similar they are.
 }]) ⇒ <code>Promise</code>
 Gets stats on a name.
 
-**Kind**: instance method of <code>[NameAPI](#NameAPI)</code>  
+**Kind**: instance method of [<code>NameAPI</code>](#NameAPI)  
 
 | Param | Type |
 | --- | --- |
@@ -646,7 +647,7 @@ Gets stats on a name.
 }]) ⇒ <code>Promise</code>
 Parses a name
 
-**Kind**: instance method of <code>[NameAPI](#NameAPI)</code>  
+**Kind**: instance method of [<code>NameAPI</code>](#NameAPI)  
 
 | Param | Type |
 | --- | --- |
@@ -658,22 +659,22 @@ Parses a name
 <a name="NameAPI.NameAPI"></a>
 
 ### NameAPI.NameAPI
-**Kind**: static class of <code>[NameAPI](#NameAPI)</code>  
+**Kind**: static class of [<code>NameAPI</code>](#NameAPI)  
 <a name="new_NameAPI.NameAPI_new"></a>
 
-#### new NameAPI(apiKey)
+#### new NameAPI(config)
 Creates an instance of NameAPI.
 
 
 | Param | Type |
 | --- | --- |
-| apiKey | <code>String</code> | 
+| config | <code>Object</code> | 
 
 <a name="PersonAPI"></a>
 
 ## PersonAPI ⇐ <code>API.APIKeyBased</code>
 **Kind**: global class  
-**Extends:** <code>API.APIKeyBased</code>  
+**Extends**: <code>API.APIKeyBased</code>  
 
 * [PersonAPI](#PersonAPI) ⇐ <code>API.APIKeyBased</code>
     * [new PersonAPI()](#new_PersonAPI_new)
@@ -690,7 +691,7 @@ Creates an instance of NameAPI.
 }])](#PersonAPI+lookup) ⇒ <code>Promise</code>
     * _static_
         * [.PersonAPI](#PersonAPI.PersonAPI)
-            * [new PersonAPI(apiKey)](#new_PersonAPI.PersonAPI_new)
+            * [new PersonAPI(config)](#new_PersonAPI.PersonAPI_new)
 
 <a name="new_PersonAPI_new"></a>
 
@@ -711,7 +712,7 @@ Person APIs (https://www.fullcontact.com/developer/docs/person/)
 }]) ⇒ <code>Promise</code>
 Looks up a person by email, phone or twitter.
 
-**Kind**: instance method of <code>[PersonAPI](#PersonAPI)</code>  
+**Kind**: instance method of [<code>PersonAPI</code>](#PersonAPI)  
 
 | Param | Type |
 | --- | --- |
@@ -729,22 +730,22 @@ Looks up a person by email, phone or twitter.
 <a name="PersonAPI.PersonAPI"></a>
 
 ### PersonAPI.PersonAPI
-**Kind**: static class of <code>[PersonAPI](#PersonAPI)</code>  
+**Kind**: static class of [<code>PersonAPI</code>](#PersonAPI)  
 <a name="new_PersonAPI.PersonAPI_new"></a>
 
-#### new PersonAPI(apiKey)
+#### new PersonAPI(config)
 Creates an instance of PersonAPI.
 
 
 | Param | Type |
 | --- | --- |
-| apiKey | <code>String</code> | 
+| config | <code>Object</code> | 
 
 <a name="StatsAPI"></a>
 
 ## StatsAPI ⇐ <code>API.APIKeyBased</code>
 **Kind**: global class  
-**Extends:** <code>API.APIKeyBased</code>  
+**Extends**: <code>API.APIKeyBased</code>  
 
 * [StatsAPI](#StatsAPI) ⇐ <code>API.APIKeyBased</code>
     * [new StatsAPI()](#new_StatsAPI_new)
@@ -754,7 +755,7 @@ Creates an instance of PersonAPI.
 }])](#StatsAPI+get) ⇒ <code>Promise</code>
     * _static_
         * [.StatsAPI](#StatsAPI.StatsAPI)
-            * [new StatsAPI(apiKey)](#new_StatsAPI.StatsAPI_new)
+            * [new StatsAPI(config)](#new_StatsAPI.StatsAPI_new)
 
 <a name="new_StatsAPI_new"></a>
 
@@ -768,7 +769,7 @@ Stats APIs (https://www.fullcontact.com/developer/docs/account-stats/)
 }]) ⇒ <code>Promise</code>
 Gets APIKey Stats
 
-**Kind**: instance method of <code>[StatsAPI](#StatsAPI)</code>  
+**Kind**: instance method of [<code>StatsAPI</code>](#StatsAPI)  
 
 | Param | Type |
 | --- | --- |
@@ -779,22 +780,22 @@ Gets APIKey Stats
 <a name="StatsAPI.StatsAPI"></a>
 
 ### StatsAPI.StatsAPI
-**Kind**: static class of <code>[StatsAPI](#StatsAPI)</code>  
+**Kind**: static class of [<code>StatsAPI</code>](#StatsAPI)  
 <a name="new_StatsAPI.StatsAPI_new"></a>
 
-#### new StatsAPI(apiKey)
+#### new StatsAPI(config)
 Creates an instance of StatsAPI.
 
 
 | Param | Type |
 | --- | --- |
-| apiKey | <code>String</code> | 
+| config | <code>Object</code> | 
 
 <a name="AccountAPI"></a>
 
 ## AccountAPI ⇐ <code>API.OAuthBased</code>
 **Kind**: global class  
-**Extends:** <code>API.OAuthBased</code>  
+**Extends**: <code>API.OAuthBased</code>  
 
 * [AccountAPI](#AccountAPI) ⇐ <code>API.OAuthBased</code>
     * [new AccountAPI()](#new_AccountAPI_new)
@@ -815,7 +816,7 @@ Account APIs (https://api.fullcontact.com/v3/docs/methods/account.get)
 Gets account information for the given accessToken.
 REQUIRED SCOPE: account.read
 
-**Kind**: instance method of <code>[AccountAPI](#AccountAPI)</code>  
+**Kind**: instance method of [<code>AccountAPI</code>](#AccountAPI)  
 
 | Param | Type |
 | --- | --- |
@@ -824,7 +825,7 @@ REQUIRED SCOPE: account.read
 <a name="AccountAPI.AccountAPI"></a>
 
 ### AccountAPI.AccountAPI
-**Kind**: static class of <code>[AccountAPI](#AccountAPI)</code>  
+**Kind**: static class of [<code>AccountAPI</code>](#AccountAPI)  
 <a name="new_AccountAPI.AccountAPI_new"></a>
 
 #### new AccountAPI()
@@ -834,7 +835,7 @@ Creates an instance of AccountAPI.
 
 ## ContactsAPI ⇐ <code>API.OAuthBased</code>
 **Kind**: global class  
-**Extends:** <code>API.OAuthBased</code>  
+**Extends**: <code>API.OAuthBased</code>  
 
 * [ContactsAPI](#ContactsAPI) ⇐ <code>API.OAuthBased</code>
     * [new ContactsAPI()](#new_ContactsAPI_new)
@@ -862,7 +863,7 @@ Contacts APIs
 Gets contacts (https://api.fullcontact.com/v3/docs/methods/contacts.get)
 REQUIRED SCOPE: contacts.read
 
-**Kind**: instance method of <code>[ContactsAPI](#ContactsAPI)</code>  
+**Kind**: instance method of [<code>ContactsAPI</code>](#ContactsAPI)  
 
 | Param | Type |
 | --- | --- |
@@ -875,7 +876,7 @@ REQUIRED SCOPE: contacts.read
 Scrolls a list of contacts (https://api.fullcontact.com/v3/docs/methods/contacts.scroll)
 REQUIRED SCOPE: contacts.read
 
-**Kind**: instance method of <code>[ContactsAPI](#ContactsAPI)</code>  
+**Kind**: instance method of [<code>ContactsAPI</code>](#ContactsAPI)  
 
 | Param | Type |
 | --- | --- |
@@ -888,7 +889,7 @@ REQUIRED SCOPE: contacts.read
 Searches for contacts (https://api.fullcontact.com/v3/docs/methods/contacts.search)
 REQUIRED SCOPE: contacts.read
 
-**Kind**: instance method of <code>[ContactsAPI](#ContactsAPI)</code>  
+**Kind**: instance method of [<code>ContactsAPI</code>](#ContactsAPI)  
 
 | Param | Type |
 | --- | --- |
@@ -901,7 +902,7 @@ REQUIRED SCOPE: contacts.read
 Creates a new contact (https://api.fullcontact.com/v3/docs/methods/contacts.create)
 REQUIRED SCOPE: contacts.write
 
-**Kind**: instance method of <code>[ContactsAPI](#ContactsAPI)</code>  
+**Kind**: instance method of [<code>ContactsAPI</code>](#ContactsAPI)  
 
 | Param | Type |
 | --- | --- |
@@ -914,7 +915,7 @@ REQUIRED SCOPE: contacts.write
 Updates a contact (https://api.fullcontact.com/v3/docs/methods/contacts.update)
 REQUIRED SCOPE: contacts.write
 
-**Kind**: instance method of <code>[ContactsAPI](#ContactsAPI)</code>  
+**Kind**: instance method of [<code>ContactsAPI</code>](#ContactsAPI)  
 
 | Param | Type |
 | --- | --- |
@@ -927,7 +928,7 @@ REQUIRED SCOPE: contacts.write
 Manages tags for a contact (https://api.fullcontact.com/v3/docs/methods/contacts.manageTags)
 REQUIRED SCOPE: contacts.write
 
-**Kind**: instance method of <code>[ContactsAPI](#ContactsAPI)</code>  
+**Kind**: instance method of [<code>ContactsAPI</code>](#ContactsAPI)  
 
 | Param | Type |
 | --- | --- |
@@ -940,7 +941,7 @@ REQUIRED SCOPE: contacts.write
 Uploads a contact photo (https://api.fullcontact.com/v3/docs/methods/contacts.uploadPhoto)
 REQUIRED SCOPE: contacts.write
 
-**Kind**: instance method of <code>[ContactsAPI](#ContactsAPI)</code>  
+**Kind**: instance method of [<code>ContactsAPI</code>](#ContactsAPI)  
 
 | Param | Type |
 | --- | --- |
@@ -954,7 +955,7 @@ REQUIRED SCOPE: contacts.write
 Deletes a contact (https://api.fullcontact.com/v3/docs/methods/contacts.delete)
 REQUIRED SCOPE: contacts.write
 
-**Kind**: instance method of <code>[ContactsAPI](#ContactsAPI)</code>  
+**Kind**: instance method of [<code>ContactsAPI</code>](#ContactsAPI)  
 
 | Param | Type |
 | --- | --- |
@@ -964,7 +965,7 @@ REQUIRED SCOPE: contacts.write
 <a name="ContactsAPI.ContactsAPI"></a>
 
 ### ContactsAPI.ContactsAPI
-**Kind**: static class of <code>[ContactsAPI](#ContactsAPI)</code>  
+**Kind**: static class of [<code>ContactsAPI</code>](#ContactsAPI)  
 <a name="new_ContactsAPI.ContactsAPI_new"></a>
 
 #### new ContactsAPI()
@@ -997,40 +998,40 @@ V3 APIs
 ### v3.account
 Gets Account APIs
 
-**Kind**: instance property of <code>[V3](#V3)</code>  
+**Kind**: instance property of [<code>V3</code>](#V3)  
 **Read only**: true  
 <a name="V3+contacts"></a>
 
 ### v3.contacts
 Gets Contacts APIs
 
-**Kind**: instance property of <code>[V3](#V3)</code>  
+**Kind**: instance property of [<code>V3</code>](#V3)  
 **Read only**: true  
 <a name="V3+tags"></a>
 
 ### v3.tags
 Gets Tags APIs
 
-**Kind**: instance property of <code>[V3](#V3)</code>  
+**Kind**: instance property of [<code>V3</code>](#V3)  
 **Read only**: true  
 <a name="V3+webhooks"></a>
 
 ### v3.webhooks
 Gets Webhooks APIs
 
-**Kind**: instance property of <code>[V3](#V3)</code>  
+**Kind**: instance property of [<code>V3</code>](#V3)  
 **Read only**: true  
 <a name="V3+teams"></a>
 
 ### v3.teams
 Gets Teams APIs
 
-**Kind**: instance property of <code>[V3](#V3)</code>  
+**Kind**: instance property of [<code>V3</code>](#V3)  
 **Read only**: true  
 <a name="V3.V3"></a>
 
 ### V3.V3
-**Kind**: static class of <code>[V3](#V3)</code>  
+**Kind**: static class of [<code>V3</code>](#V3)  
 <a name="new_V3.V3_new"></a>
 
 #### new V3()
@@ -1040,7 +1041,7 @@ Creates an instance of V3.
 
 ## TagsAPI ⇐ <code>API.OAuthBased</code>
 **Kind**: global class  
-**Extends:** <code>API.OAuthBased</code>  
+**Extends**: <code>API.OAuthBased</code>  
 
 * [TagsAPI](#TagsAPI) ⇐ <code>API.OAuthBased</code>
     * [new TagsAPI()](#new_TagsAPI_new)
@@ -1065,7 +1066,7 @@ Tags APIs
 Gets tags (https://api.fullcontact.com/v3/docs/methods/tags.get)
 REQUIRED SCOPE: tags.read
 
-**Kind**: instance method of <code>[TagsAPI](#TagsAPI)</code>  
+**Kind**: instance method of [<code>TagsAPI</code>](#TagsAPI)  
 
 | Param | Type |
 | --- | --- |
@@ -1078,7 +1079,7 @@ REQUIRED SCOPE: tags.read
 Scrolls a list of tags (https://api.fullcontact.com/v3/docs/methods/tags.scroll)
 REQUIRED SCOPE: tags.read
 
-**Kind**: instance method of <code>[TagsAPI](#TagsAPI)</code>  
+**Kind**: instance method of [<code>TagsAPI</code>](#TagsAPI)  
 
 | Param | Type |
 | --- | --- |
@@ -1091,7 +1092,7 @@ REQUIRED SCOPE: tags.read
 Creates a tag (https://api.fullcontact.com/v3/docs/methods/tags.create)
 REQUIRED SCOPE: tags.write
 
-**Kind**: instance method of <code>[TagsAPI](#TagsAPI)</code>  
+**Kind**: instance method of [<code>TagsAPI</code>](#TagsAPI)  
 
 | Param | Type |
 | --- | --- |
@@ -1104,7 +1105,7 @@ REQUIRED SCOPE: tags.write
 Updates a tag(https://api.fullcontact.com/v3/docs/methods/tags.update)
 REQUIRED SCOPE: tags.write
 
-**Kind**: instance method of <code>[TagsAPI](#TagsAPI)</code>  
+**Kind**: instance method of [<code>TagsAPI</code>](#TagsAPI)  
 
 | Param | Type |
 | --- | --- |
@@ -1117,7 +1118,7 @@ REQUIRED SCOPE: tags.write
 Deletes a tag (https://api.fullcontact.com/v3/docs/methods/tags.delete)
 REQUIRED SCOPE: tags.write
 
-**Kind**: instance method of <code>[TagsAPI](#TagsAPI)</code>  
+**Kind**: instance method of [<code>TagsAPI</code>](#TagsAPI)  
 
 | Param | Type |
 | --- | --- |
@@ -1127,7 +1128,7 @@ REQUIRED SCOPE: tags.write
 <a name="TagsAPI.TagsAPI"></a>
 
 ### TagsAPI.TagsAPI
-**Kind**: static class of <code>[TagsAPI](#TagsAPI)</code>  
+**Kind**: static class of [<code>TagsAPI</code>](#TagsAPI)  
 <a name="new_TagsAPI.TagsAPI_new"></a>
 
 #### new TagsAPI()
@@ -1137,7 +1138,7 @@ Creates an instance of TagsAPI.
 
 ## TeamsAPI ⇐ <code>API.OAuthBased</code>
 **Kind**: global class  
-**Extends:** <code>API.OAuthBased</code>  
+**Extends**: <code>API.OAuthBased</code>  
 
 * [TeamsAPI](#TeamsAPI) ⇐ <code>API.OAuthBased</code>
     * [new TeamsAPI()](#new_TeamsAPI_new)
@@ -1158,7 +1159,7 @@ Teams APIs
 Gets a list of teams for user (https://api.fullcontact.com/v3/docs/methods/teams.get)
 REQUIRED SCOPE: teams.read
 
-**Kind**: instance method of <code>[TeamsAPI](#TeamsAPI)</code>  
+**Kind**: instance method of [<code>TeamsAPI</code>](#TeamsAPI)  
 
 | Param | Type |
 | --- | --- |
@@ -1168,7 +1169,7 @@ REQUIRED SCOPE: teams.read
 <a name="TeamsAPI.TeamsAPI"></a>
 
 ### TeamsAPI.TeamsAPI
-**Kind**: static class of <code>[TeamsAPI](#TeamsAPI)</code>  
+**Kind**: static class of [<code>TeamsAPI</code>](#TeamsAPI)  
 <a name="new_TeamsAPI.TeamsAPI_new"></a>
 
 #### new TeamsAPI()
@@ -1178,7 +1179,7 @@ Creates an instance of TeamsAPI.
 
 ## WebhooksAPI ⇐ <code>API.OAuthBased</code>
 **Kind**: global class  
-**Extends:** <code>API.OAuthBased</code>  
+**Extends**: <code>API.OAuthBased</code>  
 
 * [WebhooksAPI](#WebhooksAPI) ⇐ <code>API.OAuthBased</code>
     * [new WebhooksAPI()](#new_WebhooksAPI_new)
@@ -1204,7 +1205,7 @@ Webhooks APIs
 Creates a webhook (https://api.fullcontact.com/v3/docs/methods/webhooks.create
 REQUIRED SCOPE: webhooks.write
 
-**Kind**: instance method of <code>[WebhooksAPI](#WebhooksAPI)</code>  
+**Kind**: instance method of [<code>WebhooksAPI</code>](#WebhooksAPI)  
 
 | Param | Type |
 | --- | --- |
@@ -1217,7 +1218,7 @@ REQUIRED SCOPE: webhooks.write
 Gets a list of triggers for a webhook (https://api.fullcontact.com/v3/docs/methods/webhooks.getTriggers)
 REQUIRED SCOPE: webhooks.read
 
-**Kind**: instance method of <code>[WebhooksAPI](#WebhooksAPI)</code>  
+**Kind**: instance method of [<code>WebhooksAPI</code>](#WebhooksAPI)  
 
 | Param | Type |
 | --- | --- |
@@ -1230,7 +1231,7 @@ REQUIRED SCOPE: webhooks.read
 Gets a webhook (https://api.fullcontact.com/v3/docs/methods/webhooks.get)
 REQUIRED SCOPE: webhooks.read
 
-**Kind**: instance method of <code>[WebhooksAPI](#WebhooksAPI)</code>  
+**Kind**: instance method of [<code>WebhooksAPI</code>](#WebhooksAPI)  
 
 | Param | Type |
 | --- | --- |
@@ -1243,7 +1244,7 @@ REQUIRED SCOPE: webhooks.read
 Searches webhooks(https://api.fullcontact.com/v3/docs/methods/webhooks.search)
 REQUIRED SCOPE: webhooks.read
 
-**Kind**: instance method of <code>[WebhooksAPI](#WebhooksAPI)</code>  
+**Kind**: instance method of [<code>WebhooksAPI</code>](#WebhooksAPI)  
 
 | Param | Type |
 | --- | --- |
@@ -1256,7 +1257,7 @@ REQUIRED SCOPE: webhooks.read
 Gets batches for a webhook (https://api.fullcontact.com/v3/docs/methods/webhooks.getBatches)
 REQUIRED SCOPE: webhooks.read
 
-**Kind**: instance method of <code>[WebhooksAPI](#WebhooksAPI)</code>  
+**Kind**: instance method of [<code>WebhooksAPI</code>](#WebhooksAPI)  
 
 | Param | Type |
 | --- | --- |
@@ -1269,7 +1270,7 @@ REQUIRED SCOPE: webhooks.read
 Deletes a webhook (https://api.fullcontact.com/v3/docs/methods/webhooks.delete)
 REQUIRED SCOPE: webhooks.write
 
-**Kind**: instance method of <code>[WebhooksAPI](#WebhooksAPI)</code>  
+**Kind**: instance method of [<code>WebhooksAPI</code>](#WebhooksAPI)  
 
 | Param | Type |
 | --- | --- |
@@ -1279,7 +1280,7 @@ REQUIRED SCOPE: webhooks.write
 <a name="WebhooksAPI.WebhooksAPI"></a>
 
 ### WebhooksAPI.WebhooksAPI
-**Kind**: static class of <code>[WebhooksAPI](#WebhooksAPI)</code>  
+**Kind**: static class of [<code>WebhooksAPI</code>](#WebhooksAPI)  
 <a name="new_WebhooksAPI.WebhooksAPI_new"></a>
 
 #### new WebhooksAPI()
