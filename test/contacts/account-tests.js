@@ -1,4 +1,4 @@
-const TeamsAPI = require('../../lib/apis/v3/teams');
+const AccountAPI = require('../../lib/apis/contacts/account');
 const config = require('../../lib/apis/config');
 const assert = require('assert');
 const chance = require('chance')();
@@ -6,17 +6,17 @@ const nock = require('nock');
 
 nock.disableNetConnect();
 
-describe('V3-Teams', () => {
+describe('ContactsAPIAccount', () => {
     it('should get', done => {
         const accessToken = chance.string();
-        const instance = new TeamsAPI();
-        const body = { };
+        const instance = new AccountAPI();
 
-        const scope = nock(config.url, { req_headers: { Authorization: `Bearer ${accessToken}` }})
-                        .post('/v3/teams.get', body)
+
+        const scope = nock(config.contactsUrl, { req_headers: { Authorization: `Bearer ${accessToken}` }})
+                        .post('/api/v1/account.get')
                         .reply(200, {});
 
-        instance.get(accessToken, body)
+        instance.get(accessToken)
             .then(() => {
                 scope.done();
                 done();

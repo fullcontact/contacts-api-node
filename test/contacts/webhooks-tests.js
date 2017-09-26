@@ -1,4 +1,4 @@
-const WebhooksAPI = require('../../lib/apis/v3/webhooks');
+const WebhooksAPI = require('../../lib/apis/contacts/webhooks');
 const config = require('../../lib/apis/config');
 const assert = require('assert');
 const chance = require('chance')();
@@ -6,7 +6,7 @@ const nock = require('nock');
 
 nock.disableNetConnect();
 
-describe('V3-Webhooks', () => {
+describe('ContactsAPIWebhooks', () => {
     it('should get', done => {
         const accessToken = chance.string();
         const instance = new WebhooksAPI();
@@ -14,8 +14,8 @@ describe('V3-Webhooks', () => {
             webhookIds: [chance.string()]
         };
 
-        const scope = nock(config.url, { req_headers: { Authorization: `Bearer ${accessToken}` }})
-                        .post('/v3/webhooks.get', body)
+        const scope = nock(config.contactsUrl, { req_headers: { Authorization: `Bearer ${accessToken}` }})
+                        .post('/api/v1/webhooks.get', body)
                         .reply(200, {});
 
         instance.get(accessToken, body)
@@ -33,8 +33,8 @@ describe('V3-Webhooks', () => {
             url: chance.url()
         };
 
-        const scope = nock(config.url, { req_headers: { Authorization: `Bearer ${accessToken}` }})
-                        .post('/v3/webhooks.search', body)
+        const scope = nock(config.contactsUrl, { req_headers: { Authorization: `Bearer ${accessToken}` }})
+                        .post('/api/v1/webhooks.search', body)
                         .reply(200, {});
 
         instance.search(accessToken, body)
@@ -56,8 +56,8 @@ describe('V3-Webhooks', () => {
             url: chance.url()
         };
 
-        const scope = nock(config.url, { req_headers: { Authorization: `Bearer ${accessToken}` }})
-                        .post('/v3/webhooks.create', body)
+        const scope = nock(config.contactsUrl, { req_headers: { Authorization: `Bearer ${accessToken}` }})
+                        .post('/api/v1/webhooks.create', body)
                         .reply(200, {});
 
         instance.create(accessToken, body)
@@ -73,8 +73,8 @@ describe('V3-Webhooks', () => {
         const instance = new WebhooksAPI();
         const body = { };
 
-        const scope = nock(config.url, { req_headers: { Authorization: `Bearer ${accessToken}` }})
-                        .post('/v3/webhooks.getTriggers', body)
+        const scope = nock(config.contactsUrl, { req_headers: { Authorization: `Bearer ${accessToken}` }})
+                        .post('/api/v1/webhooks.getTriggers', body)
                         .reply(200, {});
 
         instance.getTriggers(accessToken, body)
@@ -92,8 +92,8 @@ describe('V3-Webhooks', () => {
             webhookId: chance.string()
         };
 
-        const scope = nock(config.url, { req_headers: { Authorization: `Bearer ${accessToken}` }})
-                        .post('/v3/webhooks.delete', body)
+        const scope = nock(config.contactsUrl, { req_headers: { Authorization: `Bearer ${accessToken}` }})
+                        .post('/api/v1/webhooks.delete', body)
                         .reply(200, {});
 
         instance.del(accessToken, body)
@@ -112,8 +112,8 @@ describe('V3-Webhooks', () => {
             batchId: chance.string()
         };
 
-        const scope = nock(config.url, { req_headers: { Authorization: `Bearer ${accessToken}` }})
-                        .post('/v3/webhooks.getBatches', body)
+        const scope = nock(config.contactsUrl, { req_headers: { Authorization: `Bearer ${accessToken}` }})
+                        .post('/api/v1/webhooks.getBatches', body)
                         .reply(200, {});
 
         instance.getBatches(accessToken, body)

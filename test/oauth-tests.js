@@ -40,7 +40,7 @@ describe('OAuth', () => {
         const result = instance.getAuthorizationUrl();
         assert.equal(
             result,
-            `${config.appUrl}/oauth/authorize?client_id=${encodeURIComponent(clientId)}&scope=${encodeURIComponent(scope)}&redirect_uri=${encodeURIComponent(redirectUri)}`
+            `${config.contactsUrl}/oauth/authorize?client_id=${encodeURIComponent(clientId)}&scope=${encodeURIComponent(scope)}&redirect_uri=${encodeURIComponent(redirectUri)}`
         );
     });
 
@@ -61,7 +61,7 @@ describe('OAuth', () => {
         const result = instance.getAuthorizationUrl(scope, { state });
         assert.equal(
             result,
-            `${config.appUrl}/oauth/authorize?client_id=${encodeURIComponent(clientId)}&scope=${encodeURIComponent(scope)}&redirect_uri=${encodeURIComponent(redirectUri)}&state=${encodeURIComponent(state)}`
+            `${config.contactsUrl}/oauth/authorize?client_id=${encodeURIComponent(clientId)}&scope=${encodeURIComponent(scope)}&redirect_uri=${encodeURIComponent(redirectUri)}&state=${encodeURIComponent(state)}`
         );
     });
 
@@ -82,7 +82,7 @@ describe('OAuth', () => {
         const result = instance.getAuthorizationUrl(scope);
         assert.equal(
             result,
-            `${config.appUrl}/oauth/authorize?client_id=${encodeURIComponent(clientId)}&scope=${encodeURIComponent(scope)}&redirect_uri=${encodeURIComponent(redirectUri)}`
+            `${config.contactsUrl}/oauth/authorize?client_id=${encodeURIComponent(clientId)}&scope=${encodeURIComponent(scope)}&redirect_uri=${encodeURIComponent(redirectUri)}`
         );
     });
 
@@ -92,7 +92,7 @@ describe('OAuth', () => {
                 const code = chance.string();
                 const scope = nock(config.url)
                                   .post(
-                                      '/v3/oauth.exchangeAuthCode',
+                                      '/api/v1/oauth.exchangeAuthCode',
                                       {
                                         client_id: client.clientId,
                                         client_secret: client.clientSecret,
@@ -118,7 +118,7 @@ describe('OAuth', () => {
                 const code = chance.string();
                 const scope = nock(config.url)
                                   .post(
-                                      '/v3/oauth.exchangeAuthCode',
+                                      '/api/v1/oauth.exchangeAuthCode',
                                       {
                                         client_id: client.clientId,
                                         client_secret: client.clientSecret,
@@ -143,7 +143,7 @@ describe('OAuth', () => {
                 const refresh_token = chance.string();
                 const scope = nock(config.url)
                                   .post(
-                                      '/v3/oauth.refreshToken',
+                                      '/api/v1/oauth.refreshToken',
                                       {
                                         client_id: client.clientId,
                                         client_secret: client.clientSecret,

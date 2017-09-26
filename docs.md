@@ -109,7 +109,7 @@ Config: {
 <a name="new_OAuth_new"></a>
 
 ### new OAuth()
-FullContact OAuth (https://api.fullcontact.com/v3/docs/authentication/)
+FullContact OAuth (https://api.fullcontact.com/api/v1/docs/authentication/)
 
 <a name="OAuth+getAuthorizationUrl"></a>
 
@@ -808,7 +808,7 @@ Creates an instance of StatsAPI.
 <a name="new_AccountAPI_new"></a>
 
 ### new AccountAPI()
-Account APIs (https://api.fullcontact.com/v3/docs/methods/account.get)
+Account APIs (https://api.fullcontact.com/api/v1/docs/methods/account.get)
 
 <a name="AccountAPI+get"></a>
 
@@ -860,7 +860,7 @@ Contacts APIs
 <a name="ContactsAPI+get"></a>
 
 ### contactsAPI.get(accessToken, body) ⇒ <code>Promise</code>
-Gets contacts (https://api.fullcontact.com/v3/docs/methods/contacts.get)
+Gets contacts (https://api.fullcontact.com/api/v1/docs/methods/contacts.get)
 REQUIRED SCOPE: contacts.read
 
 **Kind**: instance method of [<code>ContactsAPI</code>](#ContactsAPI)  
@@ -873,7 +873,7 @@ REQUIRED SCOPE: contacts.read
 <a name="ContactsAPI+scroll"></a>
 
 ### contactsAPI.scroll(accessToken, body) ⇒ <code>Promise</code>
-Scrolls a list of contacts (https://api.fullcontact.com/v3/docs/methods/contacts.scroll)
+Scrolls a list of contacts (https://api.fullcontact.com/api/v1/docs/methods/contacts.scroll)
 REQUIRED SCOPE: contacts.read
 
 **Kind**: instance method of [<code>ContactsAPI</code>](#ContactsAPI)  
@@ -886,7 +886,7 @@ REQUIRED SCOPE: contacts.read
 <a name="ContactsAPI+search"></a>
 
 ### contactsAPI.search(accessToken, body) ⇒ <code>Promise</code>
-Searches for contacts (https://api.fullcontact.com/v3/docs/methods/contacts.search)
+Searches for contacts (https://api.fullcontact.com/api/v1/docs/methods/contacts.search)
 REQUIRED SCOPE: contacts.read
 
 **Kind**: instance method of [<code>ContactsAPI</code>](#ContactsAPI)  
@@ -899,7 +899,7 @@ REQUIRED SCOPE: contacts.read
 <a name="ContactsAPI+create"></a>
 
 ### contactsAPI.create(accessToken, body) ⇒ <code>Promise</code>
-Creates a new contact (https://api.fullcontact.com/v3/docs/methods/contacts.create)
+Creates a new contact (https://api.fullcontact.com/api/v1/docs/methods/contacts.create)
 REQUIRED SCOPE: contacts.write
 
 **Kind**: instance method of [<code>ContactsAPI</code>](#ContactsAPI)  
@@ -912,7 +912,7 @@ REQUIRED SCOPE: contacts.write
 <a name="ContactsAPI+update"></a>
 
 ### contactsAPI.update(accessToken, body) ⇒ <code>Promise</code>
-Updates a contact (https://api.fullcontact.com/v3/docs/methods/contacts.update)
+Updates a contact (https://api.fullcontact.com/api/v1/docs/methods/contacts.update)
 REQUIRED SCOPE: contacts.write
 
 **Kind**: instance method of [<code>ContactsAPI</code>](#ContactsAPI)  
@@ -925,7 +925,7 @@ REQUIRED SCOPE: contacts.write
 <a name="ContactsAPI+manageTags"></a>
 
 ### contactsAPI.manageTags(accessToken, body) ⇒ <code>Promise</code>
-Manages tags for a contact (https://api.fullcontact.com/v3/docs/methods/contacts.manageTags)
+Manages tags for a contact (https://api.fullcontact.com/api/v1/docs/methods/contacts.manageTags)
 REQUIRED SCOPE: contacts.write
 
 **Kind**: instance method of [<code>ContactsAPI</code>](#ContactsAPI)  
@@ -938,7 +938,7 @@ REQUIRED SCOPE: contacts.write
 <a name="ContactsAPI+uploadPhoto"></a>
 
 ### contactsAPI.uploadPhoto(accessToken, contact, buffer) ⇒ <code>Promise</code>
-Uploads a contact photo (https://api.fullcontact.com/v3/docs/methods/contacts.uploadPhoto)
+Uploads a contact photo (https://api.fullcontact.com/api/v1/docs/methods/contacts.uploadPhoto)
 REQUIRED SCOPE: contacts.write
 
 **Kind**: instance method of [<code>ContactsAPI</code>](#ContactsAPI)  
@@ -952,7 +952,7 @@ REQUIRED SCOPE: contacts.write
 <a name="ContactsAPI+del"></a>
 
 ### contactsAPI.del(accessToken, body) ⇒ <code>Promise</code>
-Deletes a contact (https://api.fullcontact.com/v3/docs/methods/contacts.delete)
+Deletes a contact (https://api.fullcontact.com/api/v1/docs/methods/contacts.delete)
 REQUIRED SCOPE: contacts.write
 
 **Kind**: instance method of [<code>ContactsAPI</code>](#ContactsAPI)  
@@ -1063,7 +1063,7 @@ Tags APIs
 <a name="TagsAPI+get"></a>
 
 ### tagsAPI.get(accessToken, body) ⇒ <code>Promise</code>
-Gets tags (https://api.fullcontact.com/v3/docs/methods/tags.get)
+Gets tags (https://api.fullcontact.com/api/v1/docs/methods/tags.get)
 REQUIRED SCOPE: tags.read
 
 **Kind**: instance method of [<code>TagsAPI</code>](#TagsAPI)  
@@ -1076,7 +1076,7 @@ REQUIRED SCOPE: tags.read
 <a name="TagsAPI+scroll"></a>
 
 ### tagsAPI.scroll(accessToken, body) ⇒ <code>Promise</code>
-Scrolls a list of tags (https://api.fullcontact.com/v3/docs/methods/tags.scroll)
+Scrolls a list of tags (https://api.fullcontact.com/api/v1/docs/methods/tags.scroll)
 REQUIRED SCOPE: tags.read
 
 **Kind**: instance method of [<code>TagsAPI</code>](#TagsAPI)  
@@ -1089,7 +1089,7 @@ REQUIRED SCOPE: tags.read
 <a name="TagsAPI+create"></a>
 
 ### tagsAPI.create(accessToken, body) ⇒ <code>Promise</code>
-Creates a tag (https://api.fullcontact.com/v3/docs/methods/tags.create)
+Creates a tag (https://api.fullcontact.com/api/v1/docs/methods/tags.create)
 REQUIRED SCOPE: tags.write
 
 **Kind**: instance method of [<code>TagsAPI</code>](#TagsAPI)  
@@ -1102,7 +1102,7 @@ REQUIRED SCOPE: tags.write
 <a name="TagsAPI+update"></a>
 
 ### tagsAPI.update(accessToken, body) ⇒ <code>Promise</code>
-Updates a tag(https://api.fullcontact.com/v3/docs/methods/tags.update)
+Updates a tag(https://api.fullcontact.com/api/v1/docs/methods/tags.update)
 REQUIRED SCOPE: tags.write
 
 **Kind**: instance method of [<code>TagsAPI</code>](#TagsAPI)  
@@ -1115,7 +1115,7 @@ REQUIRED SCOPE: tags.write
 <a name="TagsAPI+del"></a>
 
 ### tagsAPI.del(accessToken, body) ⇒ <code>Promise</code>
-Deletes a tag (https://api.fullcontact.com/v3/docs/methods/tags.delete)
+Deletes a tag (https://api.fullcontact.com/api/v1/docs/methods/tags.delete)
 REQUIRED SCOPE: tags.write
 
 **Kind**: instance method of [<code>TagsAPI</code>](#TagsAPI)  
@@ -1156,7 +1156,7 @@ Teams APIs
 <a name="TeamsAPI+get"></a>
 
 ### teamsAPI.get(accessToken, body) ⇒ <code>Promise</code>
-Gets a list of teams for user (https://api.fullcontact.com/v3/docs/methods/teams.get)
+Gets a list of teams for user (https://api.fullcontact.com/api/v1/docs/methods/teams.get)
 REQUIRED SCOPE: teams.read
 
 **Kind**: instance method of [<code>TeamsAPI</code>](#TeamsAPI)  
@@ -1202,7 +1202,7 @@ Webhooks APIs
 <a name="WebhooksAPI+create"></a>
 
 ### webhooksAPI.create(accessToken, body) ⇒ <code>Promise</code>
-Creates a webhook (https://api.fullcontact.com/v3/docs/methods/webhooks.create
+Creates a webhook (https://api.fullcontact.com/api/v1/docs/methods/webhooks.create
 REQUIRED SCOPE: webhooks.write
 
 **Kind**: instance method of [<code>WebhooksAPI</code>](#WebhooksAPI)  
@@ -1215,7 +1215,7 @@ REQUIRED SCOPE: webhooks.write
 <a name="WebhooksAPI+getTriggers"></a>
 
 ### webhooksAPI.getTriggers(accessToken, body) ⇒ <code>Promise</code>
-Gets a list of triggers for a webhook (https://api.fullcontact.com/v3/docs/methods/webhooks.getTriggers)
+Gets a list of triggers for a webhook (https://api.fullcontact.com/api/v1/docs/methods/webhooks.getTriggers)
 REQUIRED SCOPE: webhooks.read
 
 **Kind**: instance method of [<code>WebhooksAPI</code>](#WebhooksAPI)  
@@ -1228,7 +1228,7 @@ REQUIRED SCOPE: webhooks.read
 <a name="WebhooksAPI+get"></a>
 
 ### webhooksAPI.get(accessToken, body) ⇒ <code>Promise</code>
-Gets a webhook (https://api.fullcontact.com/v3/docs/methods/webhooks.get)
+Gets a webhook (https://api.fullcontact.com/api/v1/docs/methods/webhooks.get)
 REQUIRED SCOPE: webhooks.read
 
 **Kind**: instance method of [<code>WebhooksAPI</code>](#WebhooksAPI)  
@@ -1241,7 +1241,7 @@ REQUIRED SCOPE: webhooks.read
 <a name="WebhooksAPI+search"></a>
 
 ### webhooksAPI.search(accessToken, body) ⇒ <code>Promise</code>
-Searches webhooks(https://api.fullcontact.com/v3/docs/methods/webhooks.search)
+Searches webhooks(https://api.fullcontact.com/api/v1/docs/methods/webhooks.search)
 REQUIRED SCOPE: webhooks.read
 
 **Kind**: instance method of [<code>WebhooksAPI</code>](#WebhooksAPI)  
@@ -1254,7 +1254,7 @@ REQUIRED SCOPE: webhooks.read
 <a name="WebhooksAPI+getBatches"></a>
 
 ### webhooksAPI.getBatches(accessToken, body) ⇒ <code>Promise</code>
-Gets batches for a webhook (https://api.fullcontact.com/v3/docs/methods/webhooks.getBatches)
+Gets batches for a webhook (https://api.fullcontact.com/api/v1/docs/methods/webhooks.getBatches)
 REQUIRED SCOPE: webhooks.read
 
 **Kind**: instance method of [<code>WebhooksAPI</code>](#WebhooksAPI)  
@@ -1267,7 +1267,7 @@ REQUIRED SCOPE: webhooks.read
 <a name="WebhooksAPI+del"></a>
 
 ### webhooksAPI.del(accessToken, body) ⇒ <code>Promise</code>
-Deletes a webhook (https://api.fullcontact.com/v3/docs/methods/webhooks.delete)
+Deletes a webhook (https://api.fullcontact.com/api/v1/docs/methods/webhooks.delete)
 REQUIRED SCOPE: webhooks.write
 
 **Kind**: instance method of [<code>WebhooksAPI</code>](#WebhooksAPI)  

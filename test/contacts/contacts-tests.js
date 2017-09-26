@@ -1,4 +1,4 @@
-const ContactsAPI = require('../../lib/apis/v3/contacts');
+const ContactsAPI = require('../../lib/apis/contacts/contacts');
 const config = require('../../lib/apis/config');
 const assert = require('assert');
 const chance = require('chance')();
@@ -6,7 +6,7 @@ const nock = require('nock');
 
 nock.disableNetConnect();
 
-describe('V3-Contacts', () => {
+describe('ContactsAPIContacts', () => {
     it('should get', done => {
         const accessToken = chance.string();
         const instance = new ContactsAPI();
@@ -14,8 +14,8 @@ describe('V3-Contacts', () => {
             contactIds: [chance.string()]
         };
 
-        const scope = nock(config.url, { req_headers: { Authorization: `Bearer ${accessToken}` }})
-                        .post('/v3/contacts.get', body)
+        const scope = nock(config.contactsUrl, { req_headers: { Authorization: `Bearer ${accessToken}` }})
+                        .post('/api/v1/contacts.get', body)
                         .reply(200, {});
 
         instance.get(accessToken, body)
@@ -33,8 +33,8 @@ describe('V3-Contacts', () => {
             scrollCursor: chance.string()
         };
 
-        const scope = nock(config.url, { req_headers: { Authorization: `Bearer ${accessToken}` }})
-                        .post('/v3/contacts.scroll', body)
+        const scope = nock(config.contactsUrl, { req_headers: { Authorization: `Bearer ${accessToken}` }})
+                        .post('/api/v1/contacts.scroll', body)
                         .reply(200, {});
 
         instance.scroll(accessToken, body)
@@ -59,8 +59,8 @@ describe('V3-Contacts', () => {
             }
         };
 
-        const scope = nock(config.url, { req_headers: { Authorization: `Bearer ${accessToken}` }})
-                        .post('/v3/contacts.create', body)
+        const scope = nock(config.contactsUrl, { req_headers: { Authorization: `Bearer ${accessToken}` }})
+                        .post('/api/v1/contacts.create', body)
                         .reply(200, {});
 
         instance.create(accessToken, body)
@@ -86,8 +86,8 @@ describe('V3-Contacts', () => {
             }
         };
 
-        const scope = nock(config.url, { req_headers: { Authorization: `Bearer ${accessToken}` }})
-                        .post('/v3/contacts.update', body)
+        const scope = nock(config.contactsUrl, { req_headers: { Authorization: `Bearer ${accessToken}` }})
+                        .post('/api/v1/contacts.update', body)
                         .reply(200, {});
 
         instance.update(accessToken, body)
@@ -105,8 +105,8 @@ describe('V3-Contacts', () => {
             contactIds: [chance.string()]
         };
 
-        const scope = nock(config.url, { req_headers: { Authorization: `Bearer ${accessToken}` }})
-                        .post('/v3/contacts.delete', body)
+        const scope = nock(config.contactsUrl, { req_headers: { Authorization: `Bearer ${accessToken}` }})
+                        .post('/api/v1/contacts.delete', body)
                         .reply(200, {});
 
         instance.del(accessToken, body)
@@ -125,9 +125,9 @@ describe('V3-Contacts', () => {
         };
         const buffer = new Buffer('test');
 
-        const scope = nock(config.url, { req_headers: { Authorization: `Bearer ${accessToken}` }})
+        const scope = nock(config.contactsUrl, { req_headers: { Authorization: `Bearer ${accessToken}` }})
                         .post(
-                            '/v3/contacts.uploadPhoto',
+                            '/api/v1/contacts.uploadPhoto',
                             body => {
                                 const lines = body.split('\r\n');
 
