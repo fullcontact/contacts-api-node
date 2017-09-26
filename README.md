@@ -78,12 +78,12 @@ fullcontact.v2.person.lookup({
 	});
 ```
 
-##### v3 APIs
+##### Contacts APIs
 ---
-All v3 APIs can be found under the `v2` property on the client.
+All Contacts APIs can be found under the `contacts` property on the client.
 
 ```
-fullcontact.v3.account.get(accessToken)
+fullcontact.contacts.account.get(accessToken)
 	.then(res => {
 		//2xx response
 	})
