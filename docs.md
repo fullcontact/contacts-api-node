@@ -41,7 +41,8 @@
 * [FullContact](#FullContact)
     * _instance_
         * [.v2](#FullContact+v2)
-        * [.v3](#FullContact+v3)
+        * ~~[.v3](#FullContact+v3)~~
+        * [.contacts](#FullContact+contacts)
         * [.oauth](#FullContact+oauth)
     * _static_
         * [.FullContact](#FullContact.FullContact)
@@ -56,8 +57,17 @@ Gets v2 APIs
 **Read only**: true  
 <a name="FullContact+v3"></a>
 
-### fullContact.v3
-Gets v3 APIs
+### ~~fullContact.v3~~
+***Deprecated***
+
+Gets v2 APIs
+
+**Kind**: instance property of [<code>FullContact</code>](#FullContact)  
+**Read only**: true  
+<a name="FullContact+contacts"></a>
+
+### fullContact.contacts
+Gets Contacts APIs
 
 **Kind**: instance property of [<code>FullContact</code>](#FullContact)  
 **Read only**: true  

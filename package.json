@@ -6,7 +6,7 @@
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha --recursive",
     "docs": "./node_modules/.bin/jsdoc -r ./lib -d docs",
-    "docs:md": "./node_modules/.bin/jsdoc2md --files lib/fullcontact.js lib/apis/oauth.js lib/apis/v2/** lib/apis/v3/** > docs.md",
+    "docs:md": "./node_modules/.bin/jsdoc2md --files lib/fullcontact.js lib/apis/oauth.js lib/apis/v2/** lib/apis/contacts/** > docs.md",
     "coverage": "./node_modules/istanbul/lib/cli.js cover _mocha -- --recursive -R spec",
     "prepublish": "npm test && npm run docs:md"
   },
