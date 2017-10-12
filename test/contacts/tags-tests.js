@@ -1,4 +1,4 @@
-const TagsAPI = require('../../lib/apis/v3/tags');
+const TagsAPI = require('../../lib/apis/contacts/tags');
 const config = require('../../lib/apis/config');
 const assert = require('assert');
 const chance = require('chance')();
@@ -6,7 +6,7 @@ const nock = require('nock');
 
 nock.disableNetConnect();
 
-describe('V3-Tags', () => {
+describe('ContactsAPITags', () => {
     it('should get', done => {
         const accessToken = chance.string();
         const instance = new TagsAPI();
@@ -14,8 +14,8 @@ describe('V3-Tags', () => {
             tagIds: [chance.string()]
         };
 
-        const scope = nock(config.url, { req_headers: { Authorization: `Bearer ${accessToken}` }})
-                        .post('/v3/tags.get', body)
+        const scope = nock(config.contactsUrl, { req_headers: { Authorization: `Bearer ${accessToken}` }})
+                        .post('/api/v1/tags.get', body)
                         .reply(200, {});
 
         instance.get(accessToken, body)
@@ -33,8 +33,8 @@ describe('V3-Tags', () => {
             scrollCursor: chance.string()
         };
 
-        const scope = nock(config.url, { req_headers: { Authorization: `Bearer ${accessToken}` }})
-                        .post('/v3/tags.scroll', body)
+        const scope = nock(config.contactsUrl, { req_headers: { Authorization: `Bearer ${accessToken}` }})
+                        .post('/api/v1/tags.scroll', body)
                         .reply(200, {});
 
         instance.scroll(accessToken, body)
@@ -54,8 +54,8 @@ describe('V3-Tags', () => {
             }
         };
 
-        const scope = nock(config.url, { req_headers: { Authorization: `Bearer ${accessToken}` }})
-                        .post('/v3/tags.create', body)
+        const scope = nock(config.contactsUrl, { req_headers: { Authorization: `Bearer ${accessToken}` }})
+                        .post('/api/v1/tags.create', body)
                         .reply(200, {});
 
         instance.create(accessToken, body)
@@ -76,8 +76,8 @@ describe('V3-Tags', () => {
             }
         };
 
-        const scope = nock(config.url, { req_headers: { Authorization: `Bearer ${accessToken}` }})
-                        .post('/v3/tags.update', body)
+        const scope = nock(config.contactsUrl, { req_headers: { Authorization: `Bearer ${accessToken}` }})
+                        .post('/api/v1/tags.update', body)
                         .reply(200, {});
 
         instance.update(accessToken, body)
@@ -95,8 +95,8 @@ describe('V3-Tags', () => {
             tagIds: [chance.string()]
         };
 
-        const scope = nock(config.url, { req_headers: { Authorization: `Bearer ${accessToken}` }})
-                        .post('/v3/tags.delete', body)
+        const scope = nock(config.contactsUrl, { req_headers: { Authorization: `Bearer ${accessToken}` }})
+                        .post('/api/v1/tags.delete', body)
                         .reply(200, {});
 
         instance.del(accessToken, body)

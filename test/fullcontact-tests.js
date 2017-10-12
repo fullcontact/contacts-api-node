@@ -3,7 +3,7 @@ const chance = require('chance')();
 const FullContact = require('../lib/fullcontact');
 const OAuth = require('../lib/apis/oauth');
 const V2 = require('../lib/apis/v2');
-const V3 = require('../lib/apis/v3');
+const Contacts = require('../lib/apis/contacts');
 
 describe('FullContact', () => {
     it('should create instances', () => {
@@ -13,7 +13,9 @@ describe('FullContact', () => {
         });
 
         assert.ok(instance.oauth instanceof OAuth);
-        assert.ok(instance.v3 instanceof V3);
+        assert.ok(instance.contacts instanceof Contacts);
+        //Backwards compatibility
+        assert.ok(instance.v3 instanceof Contacts);
         assert.ok(instance.v2 instanceof V2);
     });
 
