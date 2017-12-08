@@ -1,7 +1,7 @@
 {
-  "name": "fullcontact-node",
+  "name": "contacts-api-node",
   "version": "2.0.1",
-  "description": "NodeJS SDK for FullContact APIs",
+  "description": "NodeJS SDK for FullContact Contacts API"
   "main": "lib/fullcontact.js",
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha --recursive",
@@ -10,12 +10,12 @@
     "coverage": "./node_modules/istanbul/lib/cli.js cover _mocha -- --recursive -R spec",
     "prepublish": "npm test && npm run docs:md"
   },
-  "homepage": "https://github.com/fullcontact/fullcontact-node",
+  "homepage": "https://github.com/fullcontact/contacts-api-node",
   "repository": {
     "type": "git",
-    "url": "git://github.com/fullcontact/fullcontact-node.git"
+    "url": "git://github.com/fullcontact/contacts-api-node.git"
   },
-  "bugs:": "https://github.com/fullcontact/fullcontact-node/issues",
+  "bugs:": "https://github.com/fullcontact/contacts-api-node/issues",
   "keywords": [
     "FullContact",
     "API",
@@ -24,7 +24,7 @@
   "engines": {
     "node": ">= v6.1.0"
   },
-  "author": "FullContact Labs <support+labs@fullcontact.com>",
+  "author": "FullContact <support@fullcontact.com>",
   "contributors": [
     "Matt Elliott <matt@fullcontact.com>"
   ],
