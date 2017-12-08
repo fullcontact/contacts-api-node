@@ -1,4 +1,4 @@
-# FullContact node.js SDK
+# Contacts API SDK for Node.js
 
 [![Build Status](https://travis-ci.org/fullcontact/contacts-api-node.svg?branch=master)](https://travis-ci.org/fullcontact/contacts-api-node)
 [![npm version](https://badge.fury.io/js/contacts-api-node.svg)](https://badge.fury.io/js/fullcontact-node)
