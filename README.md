@@ -1,8 +1,8 @@
 # FullContact node.js SDK
 
-[![Build Status](https://travis-ci.org/fullcontact/fullcontact-node.svg?branch=master)](https://travis-ci.org/fullcontact/fullcontact-node)
-[![npm version](https://badge.fury.io/js/fullcontact-node.svg)](https://badge.fury.io/js/fullcontact-node)
-[![Node version](https://img.shields.io/node/v/fullcontact-node.svg?style=flat)](http://nodejs.org/download/)
+[![Build Status](https://travis-ci.org/fullcontact/contacts-api-node.svg?branch=master)](https://travis-ci.org/fullcontact/contacts-api-node)
+[![npm version](https://badge.fury.io/js/contacts-api-node.svg)](https://badge.fury.io/js/fullcontact-node)
+[![Node version](https://img.shields.io/node/v/contacts-api-node.svg?style=flat)](http://nodejs.org/download/)
 
 *IMPORTANT: This SDK should be used server-side only. Using it in a browser would expose Client Secret or API Key.*
 
@@ -24,11 +24,11 @@
 
 ### Installation
 
-`npm install fullcontact-node --save`
+`npm install contacts-api-node --save`
 
 ### Documentation
 
-API Documentation can be found at [https://www.fullcontact.com/developer/docs/](https://www.fullcontact.com/developer/docs/)
+API Documentation can be found at [https://www.fullcontact.com/apps/docs](https://www.fullcontact.com/apps/docs)
 
 JSDocs can be found in [docs.md](docs.md)
 
@@ -38,7 +38,7 @@ JSDocs can be found in [docs.md](docs.md)
 ---
 
 ```
-var fullcontact = require('fullcontact-node')({
+var fullcontact = require('contacts-api-node')({
 	apiKey: '<API Key>', //for v2 APIs. See: https://www.fullcontact.com/developer/
 	clientId: '<Client ID>', //for v3 APIs. See: https://app.fullcontact.com/apps
 	clientSecret: '<Client Secret>',
