@@ -1,7 +1,7 @@
 {
   "name": "contacts-api-node",
   "version": "2.0.1",
-  "description": "NodeJS SDK for FullContact Contacts API"
+  "description": "NodeJS SDK for FullContact Contacts API",
   "main": "lib/fullcontact.js",
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha --recursive",
