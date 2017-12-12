@@ -1,9 +1,12 @@
 language: node_js
 node_js:
-  - "6.1"
+- '6.1'
 install:
-  - npm install
-  - npm prune
+- npm install
+- npm prune
 script:
-  - npm test
-  - npm run coverage
+- npm test
+- npm run coverage
+notifications:
+  slack:
+    secure: OeMNhiMLnMtWY+T0JE0ZwlqUWmDJ+L5e1x+IZFRVIui1Q+XpFVtyOesSjKrNnoptGPgFTQf1uwnUfqQbu8zM5vssSRdjT9jDmbfMH08qsq/ey66s6Ng2Eq9KTlYXKYyUyDv62devCufNnLICzOzD2Vi8DKk1De8gsVAGK756ikmoIeWHxCJcTRMlIoOS289L8G4NKprDli2gPTQETKaXEVE4ayJsn6d1EaJNx5w1Q+3B3pOqCsXdGtONnqVTOqqZDhWjB6WXjp6c6CEDHf1vhZjdFGw4osj7vFRLAMukwJ1V0Fw1zQXohx7pLP4II1CwEr4PiJvALZhipDKOwI5umxCjbPiVajVzI0DltrCmz6u6vOKTBBZbAu1OTEHXjj16XRUCTFTXwUcBACxIuCsbZhKNx7LqpT5Lizux9s5HqrjYsGVR9vV9TKxNOz6H50ZXxpE7sv1EIurJLbQUiu4+sxLn7W9RJpMBjSmkOZnW1kyy43faIfB8g33ut5JqQDF6MOSoZZAW02982SPHSh3Z1/XBXyuURnftOh7fPJBzmXKiF92Hl5xNhhwIIVMnpi5VMHHcsYStqnTv/5hzjG7PQzEOB9dc5Zhfxk2PKtyUOVpVp67crqI8ETgqu+/ftb21SaQGN7OKcvVCcWsMYJ2CxdupjbBy6VyRqAzqCxcjKUo=
