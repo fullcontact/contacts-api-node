@@ -4,22 +4,6 @@
 
 *IMPORTANT: This SDK should be used server-side only. Using it in a browser would expose Client Secret or API Key.*
 
-### Supported APIs
-
-- Person API
-- Company API
-- Email Verification API
-- Stats API
-- Name API
-- Location API
-- Tags API
-- Contacts API
-- Account API
-- Webhooks API
-- Teams API
-
-*Card Reader API is not currently supported*
-
 ### Installation
 
 `npm install contacts-api-node --save`
