@@ -1213,7 +1213,6 @@ Webhooks APIs
 
 ### webhooksAPI.create(accessToken, body) ⇒ <code>Promise</code>
 Creates a webhook (https://api.fullcontact.com/api/v1/docs/methods/webhooks.create
-REQUIRED SCOPE: webhooks.write
 
 **Kind**: instance method of [<code>WebhooksAPI</code>](#WebhooksAPI)  
 
@@ -1278,7 +1277,6 @@ REQUIRED SCOPE: webhooks.read
 
 ### webhooksAPI.del(accessToken, body) ⇒ <code>Promise</code>
 Deletes a webhook (https://api.fullcontact.com/api/v1/docs/methods/webhooks.delete)
-REQUIRED SCOPE: webhooks.write
 
 **Kind**: instance method of [<code>WebhooksAPI</code>](#WebhooksAPI)  
 
