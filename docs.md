@@ -1225,7 +1225,6 @@ Creates a webhook (https://api.fullcontact.com/api/v1/docs/methods/webhooks.crea
 
 ### webhooksAPI.getTriggers(accessToken, body) ⇒ <code>Promise</code>
 Gets a list of triggers for a webhook (https://api.fullcontact.com/api/v1/docs/methods/webhooks.getTriggers)
-REQUIRED SCOPE: webhooks.read
 
 **Kind**: instance method of [<code>WebhooksAPI</code>](#WebhooksAPI)  
 
@@ -1238,7 +1237,6 @@ REQUIRED SCOPE: webhooks.read
 
 ### webhooksAPI.get(accessToken, body) ⇒ <code>Promise</code>
 Gets a webhook (https://api.fullcontact.com/api/v1/docs/methods/webhooks.get)
-REQUIRED SCOPE: webhooks.read
 
 **Kind**: instance method of [<code>WebhooksAPI</code>](#WebhooksAPI)  
 
@@ -1251,7 +1249,6 @@ REQUIRED SCOPE: webhooks.read
 
 ### webhooksAPI.search(accessToken, body) ⇒ <code>Promise</code>
 Searches webhooks(https://api.fullcontact.com/api/v1/docs/methods/webhooks.search)
-REQUIRED SCOPE: webhooks.read
 
 **Kind**: instance method of [<code>WebhooksAPI</code>](#WebhooksAPI)  
 
@@ -1264,7 +1261,6 @@ REQUIRED SCOPE: webhooks.read
 
 ### webhooksAPI.getBatches(accessToken, body) ⇒ <code>Promise</code>
 Gets batches for a webhook (https://api.fullcontact.com/api/v1/docs/methods/webhooks.getBatches)
-REQUIRED SCOPE: webhooks.read
 
 **Kind**: instance method of [<code>WebhooksAPI</code>](#WebhooksAPI)  
 
