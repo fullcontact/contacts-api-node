@@ -188,7 +188,7 @@ Creates an instance of OAuth.
 * [CompanyAPI](#CompanyAPI) ⇐ <code>API.APIKeyBased</code>
     * [new CompanyAPI()](#new_CompanyAPI_new)
     * _instance_
-        * [.lookup([opts={
+        * [.lookup([opts&#x3D;{
  domain,
  keyPeople,
  prettyPrint,
@@ -196,7 +196,7 @@ Creates an instance of OAuth.
  webhookId,
  webhookBody
 }])](#CompanyAPI+lookup) ⇒ <code>Promise</code>
-        * [.search([opts={
+        * [.search([opts&#x3D;{
  companyName,
  sort,
  location
@@ -216,7 +216,7 @@ Company APIs (https://www.fullcontact.com/developer/docs/company)
 
 <a name="CompanyAPI+lookup"></a>
 
-### companyAPI.lookup([opts={
+### companyAPI.lookup([opts&#x3D;{
  domain,
  keyPeople,
  prettyPrint,
@@ -241,7 +241,7 @@ lookup a company by domain.
 
 <a name="CompanyAPI+search"></a>
 
-### companyAPI.search([opts={
+### companyAPI.search([opts&#x3D;{
  companyName,
  sort,
  location
@@ -289,10 +289,10 @@ Creates an instance of CompanyAPI.
 * [EmailVerificationAPI](#EmailVerificationAPI) ⇐ <code>API.APIKeyBased</code>
     * [new EmailVerificationAPI()](#new_EmailVerificationAPI_new)
     * _instance_
-        * [.single([opts={
+        * [.single([opts&#x3D;{
  email
 }])](#EmailVerificationAPI+single) ⇒ <code>Promise</code>
-        * [.batch([opts={
+        * [.batch([opts&#x3D;{
  emails,
  webhookUrl
 }])](#EmailVerificationAPI+batch) ⇒ <code>Promise</code>
@@ -308,7 +308,7 @@ Email Verification APIs (https://www.fullcontact.com/developer/docs/email-verifi
 
 <a name="EmailVerificationAPI+single"></a>
 
-### emailVerificationAPI.single([opts={
+### emailVerificationAPI.single([opts&#x3D;{
  email
 }]) ⇒ <code>Promise</code>
 Verifies a single email
@@ -323,7 +323,7 @@ Verifies a single email
 
 <a name="EmailVerificationAPI+batch"></a>
 
-### emailVerificationAPI.batch([opts={
+### emailVerificationAPI.batch([opts&#x3D;{
  emails,
  webhookUrl
 }]) ⇒ <code>Promise</code>
@@ -460,12 +460,12 @@ Creates an instance of V2.
 * [LocationAPI](#LocationAPI) ⇐ <code>API.APIKeyBased</code>
     * [new LocationAPI()](#new_LocationAPI_new)
     * _instance_
-        * [.normalize([opts={
+        * [.normalize([opts&#x3D;{
  place,
  includeZeroPopulation,
  casing
 }])](#LocationAPI+normalize) ⇒ <code>Promise</code>
-        * [.enrich([opts={
+        * [.enrich([opts&#x3D;{
  place,
  includeZeroPopulation,
  casing 
@@ -481,7 +481,7 @@ Location APIs (https://www.fullcontact.com/developer/docs/location/)
 
 <a name="LocationAPI+normalize"></a>
 
-### locationAPI.normalize([opts={
+### locationAPI.normalize([opts&#x3D;{
  place,
  includeZeroPopulation,
  casing
@@ -500,7 +500,7 @@ Normalizes a location.
 
 <a name="LocationAPI+enrich"></a>
 
-### locationAPI.enrich([opts={
+### locationAPI.enrich([opts&#x3D;{
  place,
  includeZeroPopulation,
  casing 
@@ -540,27 +540,27 @@ Creates an instance of LocationAPI.
 * [NameAPI](#NameAPI) ⇐ <code>API.APIKeyBased</code>
     * [new NameAPI()](#new_NameAPI_new)
     * _instance_
-        * [.normalize([opts={
+        * [.normalize([opts&#x3D;{
  q,
  casing
 }])](#NameAPI+normalize) ⇒ <code>Promise</code>
-        * [.deduce([opts={
+        * [.deduce([opts&#x3D;{
  email,
  username,
  casing
 }])](#NameAPI+deduce) ⇒ <code>Promise</code>
-        * [.similarity([opts={
+        * [.similarity([opts&#x3D;{
  q1,
  q2,
  casing
 }])](#NameAPI+similarity) ⇒ <code>Promise</code>
-        * [.stats([opts={
+        * [.stats([opts&#x3D;{
  name,
  givenName,
  familyName,
  casing
 }])](#NameAPI+stats) ⇒ <code>Promise</code>
-        * [.parser([opts={
+        * [.parser([opts&#x3D;{
  q,
  casing
 }])](#NameAPI+parser) ⇒ <code>Promise</code>
@@ -575,7 +575,7 @@ Name APIs (https://www.fullcontact.com/developer/docs/name/)
 
 <a name="NameAPI+normalize"></a>
 
-### nameAPI.normalize([opts={
+### nameAPI.normalize([opts&#x3D;{
  q,
  casing
 }]) ⇒ <code>Promise</code>
@@ -592,7 +592,7 @@ Normalizes a name.
 
 <a name="NameAPI+deduce"></a>
 
-### nameAPI.deduce([opts={
+### nameAPI.deduce([opts&#x3D;{
  email,
  username,
  casing
@@ -611,7 +611,7 @@ Deduces a name
 
 <a name="NameAPI+similarity"></a>
 
-### nameAPI.similarity([opts={
+### nameAPI.similarity([opts&#x3D;{
  q1,
  q2,
  casing
@@ -630,7 +630,7 @@ Compares two names to see how similar they are.
 
 <a name="NameAPI+stats"></a>
 
-### nameAPI.stats([opts={
+### nameAPI.stats([opts&#x3D;{
  name,
  givenName,
  familyName,
@@ -651,7 +651,7 @@ Gets stats on a name.
 
 <a name="NameAPI+parser"></a>
 
-### nameAPI.parser([opts={
+### nameAPI.parser([opts&#x3D;{
  q,
  casing
 }]) ⇒ <code>Promise</code>
@@ -689,7 +689,7 @@ Creates an instance of NameAPI.
 * [PersonAPI](#PersonAPI) ⇐ <code>API.APIKeyBased</code>
     * [new PersonAPI()](#new_PersonAPI_new)
     * _instance_
-        * [.lookup([opts={
+        * [.lookup([opts&#x3D;{
  email,
  emailMD5,
  emailSHA256,
@@ -710,7 +710,7 @@ Person APIs (https://www.fullcontact.com/developer/docs/person/)
 
 <a name="PersonAPI+lookup"></a>
 
-### personAPI.lookup([opts={
+### personAPI.lookup([opts&#x3D;{
  email,
  emailMD5,
  emailSHA256,
@@ -760,7 +760,7 @@ Creates an instance of PersonAPI.
 * [StatsAPI](#StatsAPI) ⇐ <code>API.APIKeyBased</code>
     * [new StatsAPI()](#new_StatsAPI_new)
     * _instance_
-        * [.get([opts={
+        * [.get([opts&#x3D;{
  period
 }])](#StatsAPI+get) ⇒ <code>Promise</code>
     * _static_
@@ -774,7 +774,7 @@ Stats APIs (https://www.fullcontact.com/developer/docs/account-stats/)
 
 <a name="StatsAPI+get"></a>
 
-### statsAPI.get([opts={
+### statsAPI.get([opts&#x3D;{
  period
 }]) ⇒ <code>Promise</code>
 Gets APIKey Stats
