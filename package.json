@@ -31,17 +31,17 @@
   "license": "MIT",
   "dependencies": {
     "lodash": "^4.17.11",
-    "moment": "^2.17.1",
-    "request": "^2.79.0",
-    "request-promise": "^4.1.1"
+    "moment": "^2.23.0",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.2"
   },
   "devDependencies": {
-    "chance": "^1.0.4",
+    "chance": "^1.0.18",
     "istanbul": "^0.4.5",
-    "jsdoc": "^3.4.3",
+    "jsdoc": "^3.5.5",
     "jsdoc-to-markdown": "4.0.1",
-    "mocha": "^3.2.0",
-    "nock": "^9.0.6",
-    "sinon": "^1.17.7"
+    "mocha": "^5.2.0",
+    "nock": "^10.0.6",
+    "sinon": "^7.2.2"
   }
 }
