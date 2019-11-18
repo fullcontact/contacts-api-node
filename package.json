@@ -1,12 +1,12 @@
 {
   "name": "contacts-api-node",
-  "version": "2.0.5",
-  "description": "NodeJS SDK for FullContact Contacts API",
-  "main": "lib/fullcontact.js",
+  "version": "3.0.0",
+  "description": "NodeJS SDK for Contacts+ Contacts API",
+  "main": "lib/contactsplus.js",
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha --recursive",
     "docs": "./node_modules/.bin/jsdoc -r ./lib -d docs",
-    "docs:md": "./node_modules/.bin/jsdoc2md --files lib/fullcontact.js lib/apis/oauth.js lib/apis/v2/** lib/apis/contacts/** > docs.md",
+    "docs:md": "./node_modules/.bin/jsdoc2md --files lib/contactsplus.js lib/apis/oauth.js lib/apis/contacts/** > docs.md",
     "coverage": "./node_modules/istanbul/lib/cli.js cover _mocha -- --recursive -R spec",
     "prepublish": "npm test && npm run docs:md"
   },
@@ -18,32 +18,34 @@
   "bugs:": "https://github.com/fullcontact/contacts-api-node/issues",
   "keywords": [
     "FullContact",
+    "Contacts+",
+    "ContactsPlus",
     "API",
     "SDK"
   ],
   "engines": {
     "node": ">= v6.1.0"
   },
-  "author": "FullContact <support@fullcontact.com>",
+  "author": "Contacts+ <support@contactsplus.com>",
   "contributors": [
     "Matt Elliott <matt@fullcontact.com>"
   ],
   "license": "MIT",
   "dependencies": {
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.15",
     "moment": "^2.23.0",
     "request": "^2.88.0",
     "request-promise": "^4.2.2"
   },
   "devDependencies": {
+    "brace-expansion": ">=1.1.7",
     "chance": "^1.0.18",
     "istanbul": "^0.4.5",
-    "jsdoc": "^3.5.5",
-    "jsdoc-to-markdown": "4.0.1",
+    "jsdoc": "^3.6.3",
+    "jsdoc-to-markdown": "^5.0.3",
+    "marked": "^0.7.0",
     "mocha": "^5.2.0",
     "nock": "^10.0.6",
-    "sinon": "^7.2.2",
-    "marked": ">=0.3.9",
-    "brace-expansion": ">=1.1.7"
+    "sinon": "^7.2.2"
   }
 }

@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/fullcontact/contacts-api-node.svg?branch=master)](https://travis-ci.org/fullcontact/contacts-api-node)
-[![npm version](https://badge.fury.io/js/contacts-api-node.svg)](https://badge.fury.io/js/fullcontact-node)
+[![npm version](https://badge.fury.io/js/contacts-api-node.svg)](https://badge.fury.io/js/contacts-api-node)
 [![Node version](https://img.shields.io/node/v/contacts-api-node.svg?style=flat)](http://nodejs.org/download/)
 
 *IMPORTANT: This SDK should be used server-side only. Using it in a browser would expose Client Secret or API Key.*
@@ -10,7 +10,7 @@
 
 ### Documentation
 
-API Documentation can be found at [https://www.fullcontact.com/apps/docs](https://www.fullcontact.com/apps/docs)
+API Documentation can be found at [https://www.contactsplus.com/developers/contacts-api](https://www.contactsplus.com/developers/contacts-api)
 
 JSDocs can be found in [docs.md](docs.md)
 
@@ -20,14 +20,12 @@ JSDocs can be found in [docs.md](docs.md)
 ---
 
 ```
-var fullcontact = require('contacts-api-node')({
-	apiKey: '<API Key>', //for v2 APIs. See: https://www.fullcontact.com/developer/
-	clientId: '<Client ID>', //for v3 APIs. See: https://app.fullcontact.com/apps
+var contactsplus = require('contacts-api-node')({
+	clientId: '<Client ID>', //for v3 APIs. See: https://app.contactsplus.com/apps
 	clientSecret: '<Client Secret>',
 	redirectUri: '<Redirect URI>',
 	scope: 'list,of,scopes',
-	userAgent: '<AppName/Version>',
-	baseUrl: '<URL>' //to override base api url
+	userAgent: '<AppName/Version>'
 });
 ```
 
@@ -41,23 +39,7 @@ All OAuth methods can be found under the `oauth` property on the client.
 - exchangeRefreshToken(refresh_token)
 
 ```
-var url = fullcontact.oauth.getAuthorizationUrl();
-```
-
-##### v2 APIs
----
-All v2 APIs can be found under the `v2` property on the client.
-
-```
-fullcontact.v2.person.lookup({
-	email: 'john@doe.com'
-})
-	.then(res => {
-		//2xx response
-	})
-	.catch(res => {
-		//non-2xx response
-	});
+var url = contactsplus.oauth.getAuthorizationUrl();
 ```
 
 ##### Contacts APIs
@@ -65,7 +47,7 @@ fullcontact.v2.person.lookup({
 All Contacts APIs can be found under the `contacts` property on the client.
 
 ```
-fullcontact.contacts.account.get(accessToken)
+contactsplus.contacts.account.get(accessToken)
 	.then(res => {
 		//2xx response
 	})

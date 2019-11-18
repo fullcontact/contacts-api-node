@@ -7,145 +7,163 @@ const nock = require('nock');
 nock.disableNetConnect();
 
 describe('ContactsAPIContacts', () => {
-    it('should get', done => {
-        const accessToken = chance.string();
-        const instance = new ContactsAPI();
-        const body = {
-            contactIds: [chance.string()]
-        };
+  it('should get', done => {
+    const accessToken = chance.string();
+    const instance = new ContactsAPI();
+    const body = {
+      contactIds: [chance.string()]
+    };
 
-        const scope = nock(config.contactsUrl, { req_headers: { Authorization: `Bearer ${accessToken}` }})
-                        .post('/api/v1/contacts.get', body)
-                        .reply(200, {});
+    const scope = nock(config.contactsUrl, {
+      req_headers: { Authorization: `Bearer ${accessToken}` }
+    })
+      .post('/api/v1/contacts.get', body)
+      .reply(200, {});
 
-        instance.get(accessToken, body)
-            .then(() => {
-                scope.done();
-                done();
-            })
-            .catch(e => assert.fail(e));
-    });
+    instance
+      .get(accessToken, body)
+      .then(() => {
+        scope.done();
+        done();
+      })
+      .catch(e => assert.fail(e));
+  });
 
-    it('should scroll', done => {
-        const accessToken = chance.string();
-        const instance = new ContactsAPI();
-        const body = {
-            scrollCursor: chance.string()
-        };
+  it('should scroll', done => {
+    const accessToken = chance.string();
+    const instance = new ContactsAPI();
+    const body = {
+      scrollCursor: chance.string()
+    };
 
-        const scope = nock(config.contactsUrl, { req_headers: { Authorization: `Bearer ${accessToken}` }})
-                        .post('/api/v1/contacts.scroll', body)
-                        .reply(200, {});
+    const scope = nock(config.contactsUrl, {
+      req_headers: { Authorization: `Bearer ${accessToken}` }
+    })
+      .post('/api/v1/contacts.scroll', body)
+      .reply(200, {});
 
-        instance.scroll(accessToken, body)
-            .then(() => {
-                scope.done();
-                done();
-            })
-            .catch(e => assert.fail(e));
-    });
+    instance
+      .scroll(accessToken, body)
+      .then(() => {
+        scope.done();
+        done();
+      })
+      .catch(e => assert.fail(e));
+  });
 
-    it('should create', done => {
-        const accessToken = chance.string();
-        const instance = new ContactsAPI();
-        const body = {
-            contact: {
-                contactData: {
-                    name: {
-                        familyName: chance.last(),
-                        giveName: chance.first()
-                    }
-                }
-            }
-        };
+  it('should create', done => {
+    const accessToken = chance.string();
+    const instance = new ContactsAPI();
+    const body = {
+      contact: {
+        contactData: {
+          name: {
+            familyName: chance.last(),
+            giveName: chance.first()
+          }
+        }
+      }
+    };
 
-        const scope = nock(config.contactsUrl, { req_headers: { Authorization: `Bearer ${accessToken}` }})
-                        .post('/api/v1/contacts.create', body)
-                        .reply(200, {});
+    const scope = nock(config.contactsUrl, {
+      req_headers: { Authorization: `Bearer ${accessToken}` }
+    })
+      .post('/api/v1/contacts.create', body)
+      .reply(200, {});
 
-        instance.create(accessToken, body)
-            .then(() => {
-                scope.done();
-                done();
-            })
-            .catch(e => assert.fail(e));
-    });
+    instance
+      .create(accessToken, body)
+      .then(() => {
+        scope.done();
+        done();
+      })
+      .catch(e => assert.fail(e));
+  });
 
-    it('should update', done => {
-        const accessToken = chance.string();
-        const instance = new ContactsAPI();
-        const body = {
-            contact: {
-                contactId: chance.string(),
-                contactData: {
-                    name: {
-                        familyName: chance.last(),
-                        giveName: chance.first()
-                    }
-                }
-            }
-        };
+  it('should update', done => {
+    const accessToken = chance.string();
+    const instance = new ContactsAPI();
+    const body = {
+      contact: {
+        contactId: chance.string(),
+        contactData: {
+          name: {
+            familyName: chance.last(),
+            giveName: chance.first()
+          }
+        }
+      }
+    };
 
-        const scope = nock(config.contactsUrl, { req_headers: { Authorization: `Bearer ${accessToken}` }})
-                        .post('/api/v1/contacts.update', body)
-                        .reply(200, {});
+    const scope = nock(config.contactsUrl, {
+      req_headers: { Authorization: `Bearer ${accessToken}` }
+    })
+      .post('/api/v1/contacts.update', body)
+      .reply(200, {});
 
-        instance.update(accessToken, body)
-            .then(() => {
-                scope.done();
-                done();
-            })
-            .catch(e => assert.fail(e));
-    });
+    instance
+      .update(accessToken, body)
+      .then(() => {
+        scope.done();
+        done();
+      })
+      .catch(e => assert.fail(e));
+  });
 
-    it('should delete', done => {
-        const accessToken = chance.string();
-        const instance = new ContactsAPI();
-        const body = {
-            contactIds: [chance.string()]
-        };
+  it('should delete', done => {
+    const accessToken = chance.string();
+    const instance = new ContactsAPI();
+    const body = {
+      contactIds: [chance.string()]
+    };
 
-        const scope = nock(config.contactsUrl, { req_headers: { Authorization: `Bearer ${accessToken}` }})
-                        .post('/api/v1/contacts.delete', body)
-                        .reply(200, {});
+    const scope = nock(config.contactsUrl, {
+      req_headers: { Authorization: `Bearer ${accessToken}` }
+    })
+      .post('/api/v1/contacts.delete', body)
+      .reply(200, {});
 
-        instance.del(accessToken, body)
-            .then(() => {
-                scope.done();
-                done();
-            })
-            .catch(e => assert.fail(e));
-    });
+    instance
+      .del(accessToken, body)
+      .then(() => {
+        scope.done();
+        done();
+      })
+      .catch(e => assert.fail(e));
+  });
 
-    it('should upload photo', done => {
-        const accessToken = chance.string();
-        const instance = new ContactsAPI();
-        const contact = {
-            contactId: chance.string()
-        };
-        const buffer = new Buffer('test');
+  it('should upload photo', done => {
+    const accessToken = chance.string();
+    const instance = new ContactsAPI();
+    const contact = {
+      contactId: chance.string()
+    };
+    const buffer = new Buffer('test');
 
-        const scope = nock(config.contactsUrl, { req_headers: { Authorization: `Bearer ${accessToken}` }})
-                        .post(
-                            '/api/v1/contacts.uploadPhoto',
-                            body => {
-                                const lines = body.split('\r\n');
+    const scope = nock(config.contactsUrl, {
+      req_headers: { Authorization: `Bearer ${accessToken}` }
+    })
+      .post('/api/v1/contacts.uploadPhoto', body => {
+        const lines = body.split('\r\n');
 
-                                return lines[1] == 'Content-Disposition: form-data; name="contact.json"' &&
-                                       lines[2] == 'Content-Type: application/json' &&
-                                       lines[4] == JSON.stringify(contact) &&
-                                       lines[6] == 'Content-Disposition: form-data; name="file3"; filename="image.png"' &&
-                                       lines[7] == 'Content-Type: image/png' &&
-                                       lines[9] == 'test';
-                            }
-                        )
-                        .reply(200, {});
+        return (
+          lines[1] == 'Content-Disposition: form-data; name="contact.json"' &&
+          lines[2] == 'Content-Type: application/json' &&
+          lines[4] == JSON.stringify(contact) &&
+          lines[6] ==
+            'Content-Disposition: form-data; name="file3"; filename="image.png"' &&
+          lines[7] == 'Content-Type: image/png' &&
+          lines[9] == 'test'
+        );
+      })
+      .reply(200, {});
 
-        instance.uploadPhoto(accessToken, contact, buffer)
-            .then(() => {
-                scope.done();
-                done();
-            })
-            .catch(e => assert.fail(e));
-    });
+    instance
+      .uploadPhoto(accessToken, contact, buffer)
+      .then(() => {
+        scope.done();
+        done();
+      })
+      .catch(e => assert.fail(e));
+  });
 });
