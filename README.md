@@ -2,7 +2,9 @@
 [![npm version](https://badge.fury.io/js/contacts-api-node.svg)](https://badge.fury.io/js/contacts-api-node)
 [![Node version](https://img.shields.io/node/v/contacts-api-node.svg?style=flat)](http://nodejs.org/download/)
 
-*IMPORTANT: This SDK should be used server-side only. Using it in a browser would expose Client Secret or API Key.*
+*IMPORTANT: This SDK should be used server-side only. Using it in a browser would expose Client Secret*
+
+*Looking for FullContact Enrich APIs? there is a new SDK for that: [https://github.com/fullcontact/fullcontact-node-sdk](https://github.com/fullcontact/fullcontact-node-sdk)*
 
 ### Installation
 
