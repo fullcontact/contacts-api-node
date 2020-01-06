@@ -1,6 +1,6 @@
 {
   "name": "contacts-api-node",
-  "version": "3.0.0",
+  "version": "4.0.0",
   "description": "NodeJS SDK for Contacts+ Contacts API",
   "main": "lib/contactsplus.js",
   "scripts": {
@@ -28,7 +28,8 @@
   },
   "author": "Contacts+ <support@contactsplus.com>",
   "contributors": [
-    "Matt Elliott <matt@fullcontact.com>"
+    "Matt Elliott <matt@fullcontact.com>",
+    "Mor Gazith <mor@fullcontact.com>"
   ],
   "license": "MIT",
   "dependencies": {
