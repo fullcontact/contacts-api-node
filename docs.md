@@ -28,6 +28,7 @@
     * _instance_
         * [.contacts](#ContactsPlus+contacts)
         * [.oauth](#ContactsPlus+oauth)
+        * [.v3](#ContactsPlus+v3)
     * _static_
         * [.ContactsPlus](#ContactsPlus.ContactsPlus)
             * [new ContactsPlus(config)](#new_ContactsPlus.ContactsPlus_new)
@@ -43,6 +44,13 @@ Gets Contacts APIs
 
 ### contactsPlus.oauth
 Gets oauth client
+
+**Kind**: instance property of [<code>ContactsPlus</code>](#ContactsPlus)  
+**Read only**: true  
+<a name="ContactsPlus+v3"></a>
+
+### contactsPlus.v3
+Gets v3 (alias of contacts)
 
 **Kind**: instance property of [<code>ContactsPlus</code>](#ContactsPlus)  
 **Read only**: true  
