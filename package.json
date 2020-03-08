@@ -1,6 +1,6 @@
 {
   "name": "contacts-api-node",
-  "version": "4.0.0",
+  "version": "4.1.0",
   "description": "NodeJS SDK for Contacts+ Contacts API",
   "main": "lib/contactsplus.js",
   "scripts": {
@@ -34,19 +34,19 @@
   "license": "MIT",
   "dependencies": {
     "lodash": "^4.17.15",
-    "moment": "^2.23.0",
+    "moment": "^2.24.0",
     "request": "^2.88.0",
-    "request-promise": "^4.2.2"
+    "request-promise": "^4.2.5"
   },
   "devDependencies": {
     "brace-expansion": ">=1.1.7",
-    "chance": "^1.0.18",
+    "chance": "^1.1.4",
     "istanbul": "^0.4.5",
     "jsdoc": "^3.6.3",
     "jsdoc-to-markdown": "^5.0.3",
     "marked": "^0.7.0",
     "mocha": "^5.2.0",
     "nock": "^10.0.6",
-    "sinon": "^7.2.2"
+    "sinon": "^7.5.0"
   }
 }
