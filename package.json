@@ -44,7 +44,7 @@
     "istanbul": "^0.4.5",
     "jsdoc": "^3.6.3",
     "jsdoc-to-markdown": "^5.0.3",
-    "marked": "^0.7.0",
+    "marked": "^4.0.10",
     "mocha": "^5.2.0",
     "nock": "^10.0.6",
     "sinon": "^7.5.0"
